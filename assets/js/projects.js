@@ -1,6 +1,7 @@
 const openButtons = document.querySelectorAll("[data-modal-open]");
 const closeButtons = document.querySelectorAll("[data-modal-close]");
 const modals = document.querySelectorAll(".modal");
+const sliders = document.querySelectorAll("[data-slider]");
 
 const openModal = (id) => {
   const modal = document.getElementById(id);
@@ -44,5 +45,32 @@ document.addEventListener("keydown", (event) => {
   const openModalEl = document.querySelector(".modal.is-open");
   if (openModalEl) {
     closeModal(openModalEl);
+  }
+});
+
+sliders.forEach((slider) => {
+  const slides = slider.querySelectorAll(".tile-slide");
+  if (!slides.length) return;
+  let currentIndex = 0;
+
+  const showSlide = (index) => {
+    slides[currentIndex].classList.remove("is-active");
+    currentIndex = (index + slides.length) % slides.length;
+    slides[currentIndex].classList.add("is-active");
+  };
+
+  const prevButton = slider.querySelector("[data-slider-prev]");
+  const nextButton = slider.querySelector("[data-slider-next]");
+
+  if (prevButton) {
+    prevButton.addEventListener("click", () => {
+      showSlide(currentIndex - 1);
+    });
+  }
+
+  if (nextButton) {
+    nextButton.addEventListener("click", () => {
+      showSlide(currentIndex + 1);
+    });
   }
 });

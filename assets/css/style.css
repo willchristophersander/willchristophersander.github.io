@@ -162,7 +162,7 @@ a {
 
 .tile-grid {
   display: grid;
-  grid-template-columns: repeat(2, minmax(0, 1fr));
+  grid-template-columns: repeat(1, minmax(0, 1fr));
   gap: 1.8rem;
 }
 
@@ -194,7 +194,7 @@ a {
 }
 
 .tile-body {
-  padding: 1.6rem 1.8rem 1.8rem;
+  padding: 1.2rem 1.4rem 1.4rem;
   display: flex;
   flex-direction: column;
   gap: 0.65rem;
@@ -205,6 +205,88 @@ a {
   height: 100%;
   object-fit: cover;
   display: block;
+}
+
+.tile-media iframe {
+  width: 100%;
+  height: 100%;
+  border: 0;
+  display: block;
+}
+
+.tile-slider {
+  position: relative;
+  height: 100%;
+}
+
+.tile-slides {
+  height: 100%;
+}
+
+.tile-slide {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: none;
+}
+
+.tile-slide.is-active {
+  display: block;
+}
+
+.tile-arrow {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 34px;
+  height: 34px;
+  border-radius: 999px;
+  border: 1px solid rgba(15, 23, 42, 0.12);
+  background: rgba(255, 255, 255, 0.85);
+  color: #0f172a;
+  font-size: 1.2rem;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  z-index: 3;
+}
+
+.tile-arrow--left {
+  left: 0.6rem;
+}
+
+.tile-arrow--right {
+  right: 0.6rem;
+}
+
+.tile-arrow:focus {
+  outline: 2px solid var(--accent);
+  outline-offset: 2px;
+}
+
+.tile-tags {
+  position: absolute;
+  top: 0.4rem;
+  left: 0.9rem;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+  z-index: 2;
+}
+
+.tile-tag {
+  display: inline-flex;
+  align-items: center;
+  padding: 0.35rem 0.75rem;
+  border-radius: 999px;
+  font-size: 0.75rem;
+  font-weight: 600;
+  letter-spacing: 0.01em;
+  color: #0f172a;
+  background: rgba(255, 255, 255, 0.85);
+  border: 1px solid rgba(15, 23, 42, 0.08);
+  backdrop-filter: blur(8px);
 }
 
 .tile-card:hover {
@@ -376,6 +458,19 @@ a {
   display: block;
 }
 
+.modal-pdf {
+  margin-top: 2rem;
+  display: grid;
+  gap: 0.8rem;
+}
+
+.modal-pdf object {
+  width: 100%;
+  height: 520px;
+  border: 1px solid var(--border);
+  border-radius: 10px;
+}
+
 body.modal-open {
   overflow: hidden;
 }
@@ -392,17 +487,18 @@ body.modal-open {
   }
 }
 
-@media (min-width: 960px) {
+@media (min-width: 1200px) {
+  .tile-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+
+@media (min-width: 1600px) {
   .tile-grid {
     grid-template-columns: repeat(3, minmax(0, 1fr));
   }
 }
 
-@media (min-width: 1240px) {
-  .tile-grid {
-    grid-template-columns: repeat(4, minmax(0, 1fr));
-  }
-}
 
 .site-footer {
   border-top: 1px solid var(--border);

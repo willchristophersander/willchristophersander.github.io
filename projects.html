@@ -36,10 +36,45 @@
         <div class="container tile-grid">
           <article class="card project-card tile-card">
             <div class="tile-media">
-              <img
-                src="Projects/EmotionCRNN/EmotionCRNN.png"
-                alt="Emotion CRNN model visualization"
-              />
+              <div class="tile-tags">
+                <span class="tile-tag">Python</span>
+                <span class="tile-tag">Machine Learning</span>
+              </div>
+              <div class="tile-slider" data-slider>
+                <button
+                  class="tile-arrow tile-arrow--left"
+                  type="button"
+                  aria-label="Previous image"
+                  data-slider-prev
+                >
+                  ‹
+                </button>
+                <div class="tile-slides" data-slider-track>
+                  <img
+                    class="tile-slide is-active"
+                    src="Projects/EmotionCRNN/EmotionCRNN.png"
+                    alt="Emotion CRNN model visualization"
+                  />
+                  <img
+                    class="tile-slide"
+                    src="Projects/EmotionCRNN/EmotionCRNN2.png"
+                    alt="Emotion CRNN model output"
+                  />
+                  <img
+                    class="tile-slide"
+                    src="Projects/EmotionCRNN/UVMComputerScienceFair.png"
+                    alt="UVM computer science fair poster"
+                  />
+                </div>
+                <button
+                  class="tile-arrow tile-arrow--right"
+                  type="button"
+                  aria-label="Next image"
+                  data-slider-next
+                >
+                  ›
+                </button>
+              </div>
             </div>
             <div class="tile-body">
               <div class="tile-header">
@@ -62,7 +97,19 @@
           </article>
 
           <article class="card project-card tile-card">
-            <div class="tile-media tile-media--graphics"></div>
+            <div class="tile-media tile-media--graphics">
+              <div class="tile-tags">
+                <span class="tile-tag">C++</span>
+                <span class="tile-tag">OpenGL</span>
+                <span class="tile-tag">Graphics</span>
+              </div>
+              <iframe
+                src="https://www.youtube.com/embed/DYT15DFBhdc"
+                title="C++ Canvas Raster Graphics Editor demo"
+                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                allowfullscreen
+              ></iframe>
+            </div>
             <div class="tile-body">
               <div class="tile-header">
                 <h2>C++ Canvas Raster Graphics Editor</h2>
@@ -86,7 +133,13 @@
           </article>
 
           <article class="card project-card tile-card">
-            <div class="tile-media tile-media--iot"></div>
+            <div class="tile-media tile-media--iot">
+              <div class="tile-tags">
+                <span class="tile-tag">Python</span>
+                <span class="tile-tag">IoT</span>
+                <span class="tile-tag">Hardware</span>
+              </div>
+            </div>
             <div class="tile-body">
               <div class="tile-header">
                 <h2>E-Ink iCloud Calendar Display</h2>
@@ -155,6 +208,20 @@
               src="Projects/EmotionCRNN/UVMComputerScienceFair.png"
               alt="UVM computer science fair poster"
             />
+          </div>
+          <div class="modal-pdf">
+            <h3>Final report</h3>
+            <object
+              data="Projects/EmotionCRNN/CS3540_Final_Report.pdf"
+              type="application/pdf"
+            >
+              <p class="muted-text">
+                Your browser does not support embedded PDFs.
+                <a href="Projects/EmotionCRNN/CS3540_Final_Report.pdf"
+                  >Download the report</a
+                >.
+              </p>
+            </object>
           </div>
         </div>
       </div>
