@@ -211,6 +211,17 @@ a {
   font-weight: 600;
 }
 
+.link-row {
+  display: flex;
+  gap: 1rem;
+  flex-wrap: wrap;
+  margin-top: 1rem;
+}
+
+.link-row .text-link {
+  margin-top: 0;
+}
+
 .site-footer {
   border-top: 1px solid var(--border);
   padding: 1.5rem 0 2.5rem;
