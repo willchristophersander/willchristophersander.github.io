@@ -162,7 +162,7 @@ a {
 
 .tile-grid {
   display: grid;
-  grid-template-columns: repeat(3, minmax(0, 1fr));
+  grid-template-columns: repeat(2, minmax(0, 1fr));
   gap: 1.8rem;
 }
 
@@ -195,8 +195,9 @@ a {
 
 .tile-body {
   padding: 1.6rem 1.8rem 1.8rem;
-  display: grid;
-  gap: 0.75rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.65rem;
 }
 
 .tile-media img {
@@ -219,11 +220,12 @@ a {
 .tile-summary {
   margin: 0;
   color: var(--muted);
+  min-height: 2.6rem;
 }
 
 .tile-bullets {
-  margin: 0;
-  padding-left: 1.2rem;
+  margin: auto 0 0;
+  padding-left: 1.1rem;
   color: var(--muted);
 }
 
@@ -387,6 +389,18 @@ body.modal-open {
 @media (max-width: 640px) {
   .tile-grid {
     grid-template-columns: 1fr;
+  }
+}
+
+@media (min-width: 960px) {
+  .tile-grid {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+  }
+}
+
+@media (min-width: 1240px) {
+  .tile-grid {
+    grid-template-columns: repeat(4, minmax(0, 1fr));
   }
 }
 
