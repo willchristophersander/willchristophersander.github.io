@@ -42,6 +42,7 @@ a {
   background: rgba(247, 247, 245, 0.9);
   border-bottom: 1px solid var(--border);
   backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
   z-index: 10;
 }
 
@@ -232,7 +233,7 @@ a {
 .tile-slide {
   position: absolute;
   top: 50%;
-  transform: translate(-50%, -50%);
+  transform: translate3d(-50%, -50%, 0);
   transition: left 0.35s ease, width 0.35s ease, height 0.35s ease,
     opacity 0.35s ease;
   width: 64%;
@@ -243,6 +244,8 @@ a {
   border-radius: 10px;
   object-fit: contain;
   border: 0;
+  backface-visibility: hidden;
+  will-change: left, width, height, opacity, transform;
 }
 
 .tile-slide.is-active {
@@ -406,6 +409,7 @@ a {
   background: rgba(255, 255, 255, 0.85);
   border: 1px solid rgba(15, 23, 42, 0.08);
   backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
 }
 
 .tile-card:hover {
