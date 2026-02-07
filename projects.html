@@ -33,49 +33,53 @@
       </section>
 
       <section class="section">
+        <!-- PROJECTS:START -->
+        <div class="container filter-bar">
+          <div class="filter-search">
+            <label class="filter-label" for="project-search">Search projects</label>
+            <input
+              id="project-search"
+              type="search"
+              placeholder="Search by title, summary, or tag"
+              autocomplete="off"
+            />
+          </div>
+          <div class="filter-tags" aria-label="Filter by tag">
+            <button class="filter-chip is-active" type="button" data-tag="all">All</button>
+            <button class="filter-chip" type="button" data-tag="python">Python</button>
+            <button class="filter-chip" type="button" data-tag="machine-learning">Machine Learning</button>
+            <button class="filter-chip" type="button" data-tag="pytorch">PyTorch</button>
+            <button class="filter-chip" type="button" data-tag="neural-network">Neural Network</button>
+            <button class="filter-chip" type="button" data-tag="c++">C++</button>
+            <button class="filter-chip" type="button" data-tag="opengl">OpenGL</button>
+            <button class="filter-chip" type="button" data-tag="graphics">Graphics</button>
+            <button class="filter-chip" type="button" data-tag="iot">IoT</button>
+            <button class="filter-chip" type="button" data-tag="hardware">Hardware</button>
+            <button class="filter-chip" type="button" data-tag="java">Java</button>
+            <button class="filter-chip" type="button" data-tag="html">HTML</button>
+            <button class="filter-chip" type="button" data-tag="gui">GUI</button>
+            <button class="filter-chip" type="button" data-tag="macos">MacOS</button>
+          </div>
+        </div>
         <div class="container tile-grid">
-          <article class="card project-card tile-card">
+          <article
+            class="card project-card tile-card"
+            data-tags="python,machine-learning,pytorch,neural-network"
+          >
+            <div class="tile-tags">
+              <span class="tile-tag">Python</span>
+              <span class="tile-tag">Machine Learning</span>
+              <span class="tile-tag">PyTorch</span>
+              <span class="tile-tag">Neural Network</span>
+            </div>
             <div class="tile-media">
-              <div class="tile-tags">
-                <span class="tile-tag">Python</span>
-                <span class="tile-tag">Machine Learning</span>
+            <div class="tile-slider is-simple" data-slider>
+              <div class="tile-slides" data-slider-track>
+                <img class="tile-slide is-active" src="Projects/EmotionCRNN/EmotionCRNN.png" alt="" />
+                <img class="tile-slide" src="Projects/EmotionCRNN/EmotionCRNN2.png" alt="Emotion CRNN model output" />
+                <img class="tile-slide" src="Projects/EmotionCRNN/UVMComputerScienceFair.png" alt="UVM computer science fair poster" />
               </div>
-              <div
-                class="tile-slider is-simple"
-                data-slider
-                data-items="image:Projects/EmotionCRNN/EmotionCRNN.png|image:Projects/EmotionCRNN/EmotionCRNN2.png|image:Projects/EmotionCRNN/UVMComputerScienceFair.png"
-                data-alts="Emotion CRNN model visualization|Emotion CRNN model output|UVM computer science fair poster"
-              >
-                <div class="tile-slides" data-slider-track>
-                  <div class="tile-slide role-left" data-slider-slot="prev">
-                    <img class="tile-slide-media" src="" alt="" />
-                    <iframe
-                      class="tile-slide-media"
-                      title=""
-                      allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-                      allowfullscreen
-                    ></iframe>
-                  </div>
-                  <div class="tile-slide role-center" data-slider-slot="current">
-                    <img class="tile-slide-media" src="" alt="" />
-                    <iframe
-                      class="tile-slide-media"
-                      title=""
-                      allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-                      allowfullscreen
-                    ></iframe>
-                  </div>
-                  <div class="tile-slide role-right" data-slider-slot="next">
-                    <img class="tile-slide-media" src="" alt="" />
-                    <iframe
-                      class="tile-slide-media"
-                      title=""
-                      allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-                      allowfullscreen
-                    ></iframe>
-                  </div>
-                </div>
-              </div>
+            </div>
             </div>
             <div class="tile-body">
               <div class="tile-header">
@@ -97,59 +101,29 @@
             </div>
           </article>
 
-          <article class="card project-card tile-card">
-            <div class="tile-media tile-media--graphics">
-              <div class="tile-tags">
-                <span class="tile-tag">C++</span>
-                <span class="tile-tag">OpenGL</span>
-                <span class="tile-tag">Graphics</span>
+          <article
+            class="card project-card tile-card"
+            data-tags="c++,opengl,graphics"
+          >
+            <div class="tile-tags">
+              <span class="tile-tag">C++</span>
+              <span class="tile-tag">OpenGL</span>
+              <span class="tile-tag">Graphics</span>
+            </div>
+            <div class="tile-media">
+            <div class="tile-slider is-simple" data-slider>
+              <div class="tile-slides" data-slider-track>
+                <iframe class="tile-slide is-active" src="https://www.youtube.com/embed/DYT15DFBhdc" title="" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                <img class="tile-slide" src="Projects/Canvas/Screenshot 2026-02-06 at 8.57.05 PM.png" alt="C++ Canvas raster editor screenshot" />
               </div>
-              <div
-                class="tile-slider is-simple"
-                data-slider
-                data-items="video:https://www.youtube.com/embed/DYT15DFBhdc|image:Projects/Canvas/Screenshot 2026-02-06 at 8.57.05 PM.png"
-                data-titles="C++ Canvas Raster Graphics Editor demo|"
-                data-alts="|C++ Canvas raster editor screenshot"
-              >
-                <div class="tile-slides" data-slider-track>
-                  <div class="tile-slide role-left" data-slider-slot="prev">
-                    <img class="tile-slide-media" src="" alt="" />
-                    <iframe
-                      class="tile-slide-media"
-                      title=""
-                      allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-                      allowfullscreen
-                    ></iframe>
-                  </div>
-                  <div class="tile-slide role-center" data-slider-slot="current">
-                    <img class="tile-slide-media" src="" alt="" />
-                    <iframe
-                      class="tile-slide-media"
-                      title=""
-                      allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-                      allowfullscreen
-                    ></iframe>
-                  </div>
-                  <div class="tile-slide role-right" data-slider-slot="next">
-                    <img class="tile-slide-media" src="" alt="" />
-                    <iframe
-                      class="tile-slide-media"
-                      title=""
-                      allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-                      allowfullscreen
-                    ></iframe>
-                  </div>
-                </div>
-              </div>
+            </div>
             </div>
             <div class="tile-body">
               <div class="tile-header">
                 <h2>C++ Canvas Raster Graphics Editor</h2>
                 <p class="muted-text">UVM · Advanced Programming</p>
               </div>
-              <p class="tile-summary">
-                Real-time raster editor with layered buffers.
-              </p>
+              <p class="tile-summary">Real-time raster editor with layered buffers.</p>
               <ul class="tile-bullets">
                 <li>7 tools + diff-based undo/redo</li>
                 <li>Lazy CPU→GPU texture updates</li>
@@ -164,58 +138,30 @@
             </div>
           </article>
 
-          <article class="card project-card tile-card">
-            <div class="tile-media tile-media--iot">
-              <div class="tile-tags">
-                <span class="tile-tag">Python</span>
-                <span class="tile-tag">IoT</span>
-                <span class="tile-tag">Hardware</span>
+          <article
+            class="card project-card tile-card"
+            data-tags="python,graphics,iot,hardware,gui"
+          >
+            <div class="tile-tags">
+              <span class="tile-tag">Python</span>
+              <span class="tile-tag">Graphics</span>
+              <span class="tile-tag">IoT</span>
+              <span class="tile-tag">Hardware</span>
+              <span class="tile-tag">GUI</span>
+            </div>
+            <div class="tile-media">
+            <div class="tile-slider is-simple" data-slider>
+              <div class="tile-slides" data-slider-track>
+                <img class="tile-slide is-active" src="Projects/eInkCalendar/1762628649391.jpeg" alt="" />
               </div>
-              <div
-                class="tile-slider is-simple"
-                data-slider
-                data-items="image:Projects/eInkCalendar/1762628649391.jpeg"
-                data-alts="E-Ink calendar hardware"
-              >
-                <div class="tile-slides" data-slider-track>
-                  <div class="tile-slide role-left" data-slider-slot="prev">
-                    <img class="tile-slide-media" src="" alt="" />
-                    <iframe
-                      class="tile-slide-media"
-                      title=""
-                      allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-                      allowfullscreen
-                    ></iframe>
-                  </div>
-                  <div class="tile-slide role-center" data-slider-slot="current">
-                    <img class="tile-slide-media" src="" alt="" />
-                    <iframe
-                      class="tile-slide-media"
-                      title=""
-                      allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-                      allowfullscreen
-                    ></iframe>
-                  </div>
-                  <div class="tile-slide role-right" data-slider-slot="next">
-                    <img class="tile-slide-media" src="" alt="" />
-                    <iframe
-                      class="tile-slide-media"
-                      title=""
-                      allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-                      allowfullscreen
-                    ></iframe>
-                  </div>
-                </div>
-              </div>
+            </div>
             </div>
             <div class="tile-body">
               <div class="tile-header">
                 <h2>E-Ink iCloud Calendar Display</h2>
                 <p class="muted-text">IoT · Product build</p>
               </div>
-              <p class="tile-summary">
-                Modular E-Ink calendar integrating iCloud.
-              </p>
+              <p class="tile-summary">Modular E-Ink calendar integrating iCloud.</p>
               <ul class="tile-bullets">
                 <li>Unified ICS + JSON event pipeline</li>
                 <li>Custom layout engine</li>
@@ -229,22 +175,58 @@
               </button>
             </div>
           </article>
+
+          <article
+            class="card project-card tile-card"
+            data-tags="python,html,gui,macos"
+          >
+            <div class="tile-tags">
+              <span class="tile-tag">Python</span>
+              <span class="tile-tag">HTML</span>
+              <span class="tile-tag">GUI</span>
+              <span class="tile-tag">MacOS</span>
+            </div>
+            <div class="tile-media">
+            <div class="tile-slider is-simple" data-slider>
+              <div class="tile-slides" data-slider-track>
+                <img class="tile-slide is-active" src="Projects/projectManager/Screenshot 2026-02-06 at 10.03.15 PM.png" alt="" />
+                <iframe class="tile-slide" src="https://www.youtube.com/embed/zdklcfbCp5E" title="" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                <img class="tile-slide" src="Projects/projectManager/Screenshot 2026-02-06 at 8.47.25 PM.png" alt="" />
+              </div>
+            </div>
+            </div>
+            <div class="tile-body">
+              <div class="tile-header">
+                <h2>Website Project Manager</h2>
+                <p class="muted-text">William Sander · Personal Project</p>
+              </div>
+              <p class="tile-summary">MacOS GUI program that uses Python to convert user inputs into HTML code dynamically, compiling final output for this website.</p>
+              <ul class="tile-bullets">
+                
+              </ul>
+              <button
+                class="text-link tile-action"
+                type="button"
+                data-modal-open="project-projectManager"
+              >
+                View details
+              </button>
+            </div>
+          </article>
+
         </div>
+<!-- PROJECTS:END -->
       </section>
 
+      <!-- PROJECT_MODALS:START -->
       <div class="modal" id="project-crnn" aria-hidden="true" role="dialog">
         <div class="modal-backdrop" data-modal-close></div>
         <div class="modal-content" role="document">
           <button class="modal-close" type="button" data-modal-close>
             Close
           </button>
-          <div
-            class="modal-slider tile-slider"
-            data-slider
-            data-items="image:Projects/EmotionCRNN/EmotionCRNN.png|image:Projects/EmotionCRNN/EmotionCRNN2.png|image:Projects/EmotionCRNN/UVMComputerScienceFair.png"
-            data-alts="Emotion CRNN model visualization|Emotion CRNN model output|UVM computer science fair poster"
-          >
-            <button
+            <div class="tile-slider modal-slider" data-slider>
+                          <button
               class="tile-arrow tile-arrow--left"
               type="button"
               aria-label="Previous image"
@@ -252,35 +234,6 @@
             >
               ‹
             </button>
-            <div class="tile-slides" data-slider-track>
-              <div class="tile-slide role-left" data-slider-slot="prev">
-                <img class="tile-slide-media" src="" alt="" />
-                <iframe
-                  class="tile-slide-media"
-                  title=""
-                  allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-                  allowfullscreen
-                ></iframe>
-              </div>
-              <div class="tile-slide role-center" data-slider-slot="current">
-                <img class="tile-slide-media" src="" alt="" />
-                <iframe
-                  class="tile-slide-media"
-                  title=""
-                  allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-                  allowfullscreen
-                ></iframe>
-              </div>
-              <div class="tile-slide role-right" data-slider-slot="next">
-                <img class="tile-slide-media" src="" alt="" />
-                <iframe
-                  class="tile-slide-media"
-                  title=""
-                  allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-                  allowfullscreen
-                ></iframe>
-              </div>
-            </div>
             <button
               class="tile-arrow tile-arrow--right"
               type="button"
@@ -289,35 +242,25 @@
             >
               ›
             </button>
-          </div>
+<div class="tile-slides" data-slider-track>
+                <img class="tile-slide is-active" src="Projects/EmotionCRNN/EmotionCRNN.png" alt="" />
+                <img class="tile-slide" src="Projects/EmotionCRNN/EmotionCRNN2.png" alt="" />
+                <img class="tile-slide" src="Projects/EmotionCRNN/UVMComputerScienceFair.png" alt="" />
+              </div>
+            </div>
           <h2>AI Speech Emotion Recognition System</h2>
           <p class="muted-text">UVM · Advanced Machine Learning</p>
           <p>
-            Built a CRNN architecture (CNN + BiLSTM + Attention) for multilingual
-            speech emotion recognition across eight datasets. Designed the
-            training pipeline, evaluation, and interpretability tools, then
-            deployed real-time inference with Flask.
+            Built a CRNN architecture (CNN + BiLSTM + Attention) for multilingual speech emotion recognition across eight datasets. Designed the training pipeline, evaluation, and interpretability tools, then deployed real-time inference with Flask.
           </p>
           <ul class="list compact">
-            <li>
-              81.29% accuracy / 83.63% F1 (4-class) and 76.76% accuracy /
-              82.80% F1 (6-class)
-            </li>
-            <li>
-              Distance-weighted loss using arousal–valence theory and
-              multilingual training
-            </li>
+            <li>81.29% accuracy / 83.63% F1 (4-class) and 76.76% accuracy / 82.80% F1 (6-class)</li>
+            <li>Distance-weighted loss using arousal–valence theory and multilingual training</li>
             <li>PyTorch, Python, Flask, Grad-CAM, attention maps</li>
           </ul>
           <div class="modal-links">
-            <a
-              class="text-link"
-              href="https://github.com/willchristophersander/SpeechEmotionCS3540"
-              >Repository on GitHub</a
-            >
-            <a class="text-link" href="Projects/EmotionCRNN/CS3540_Final_Report.pdf"
-              >Final report (PDF)</a
-            >
+          <a class="text-link" href="https://github.com/willchristophersander/SpeechEmotionCS3540">Repository on GitHub</a>
+          <a class="text-link" href="Projects/EmotionCRNN/CS3540_Final_Report.pdf">Final report (PDF)</a>
           </div>
           <div class="modal-pdf">
             <h3>Final report</h3>
@@ -327,9 +270,7 @@
             >
               <p class="muted-text">
                 Your browser does not support embedded PDFs.
-                <a href="Projects/EmotionCRNN/CS3540_Final_Report.pdf"
-                  >Download the report</a
-                >.
+                <a href="Projects/EmotionCRNN/CS3540_Final_Report.pdf">Download the report</a>.
               </p>
             </object>
           </div>
@@ -342,14 +283,8 @@
           <button class="modal-close" type="button" data-modal-close>
             Close
           </button>
-          <div
-            class="modal-slider tile-slider"
-            data-slider
-            data-items="video:https://www.youtube.com/embed/DYT15DFBhdc|image:Projects/Canvas/Screenshot 2026-02-06 at 8.57.05 PM.png"
-            data-titles="C++ Canvas Raster Graphics Editor demo|"
-            data-alts="|C++ Canvas raster editor screenshot"
-          >
-            <button
+            <div class="tile-slider modal-slider" data-slider>
+                          <button
               class="tile-arrow tile-arrow--left"
               type="button"
               aria-label="Previous image"
@@ -357,35 +292,6 @@
             >
               ‹
             </button>
-            <div class="tile-slides" data-slider-track>
-              <div class="tile-slide role-left" data-slider-slot="prev">
-                <img class="tile-slide-media" src="" alt="" />
-                <iframe
-                  class="tile-slide-media"
-                  title=""
-                  allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-                  allowfullscreen
-                ></iframe>
-              </div>
-              <div class="tile-slide role-center" data-slider-slot="current">
-                <img class="tile-slide-media" src="" alt="" />
-                <iframe
-                  class="tile-slide-media"
-                  title=""
-                  allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-                  allowfullscreen
-                ></iframe>
-              </div>
-              <div class="tile-slide role-right" data-slider-slot="next">
-                <img class="tile-slide-media" src="" alt="" />
-                <iframe
-                  class="tile-slide-media"
-                  title=""
-                  allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-                  allowfullscreen
-                ></iframe>
-              </div>
-            </div>
             <button
               class="tile-arrow tile-arrow--right"
               type="button"
@@ -394,14 +300,15 @@
             >
               ›
             </button>
-          </div>
+<div class="tile-slides" data-slider-track>
+                <iframe class="tile-slide is-active" src="https://www.youtube.com/embed/DYT15DFBhdc" title="" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                <img class="tile-slide" src="Projects/Canvas/Screenshot 2026-02-06 at 8.57.05 PM.png" alt="" />
+              </div>
+            </div>
           <h2>C++ Canvas Raster Graphics Editor</h2>
           <p class="muted-text">UVM · Advanced Programming</p>
           <p>
-            Built a real-time raster graphics engine with seven tools,
-            multi-layer RGBA buffers, and diff-based undo/redo. Implemented
-            OpenGL rendering with lazy texture updates and software blending,
-            plus image filters via Python C API + NumPy.
+            Built a real-time raster graphics engine with seven tools, multi-layer RGBA buffers, and diff-based undo/redo. Implemented OpenGL rendering with lazy texture updates and software blending, plus image filters via Python C API + NumPy.
           </p>
           <ul class="list compact">
             <li>60 FPS at 800×600 with lazy CPU→GPU texture updates</li>
@@ -409,13 +316,10 @@
             <li>C++, OpenGL, ImGui, Python C API, NumPy</li>
           </ul>
           <div class="modal-links">
-            <a class="text-link" href="https://youtu.be/DYT15DFBhdc"
-              >Video demo</a
-            >
-            <a class="text-link" href="https://github.com/willchristophersander/Canvas"
-              >Repository on GitHub</a
-            >
+          <a class="text-link" href="https://youtu.be/DYT15DFBhdc">Video demo</a>
+          <a class="text-link" href="https://github.com/willchristophersander/Canvas">Repository on GitHub</a>
           </div>
+
         </div>
       </div>
 
@@ -425,13 +329,15 @@
           <button class="modal-close" type="button" data-modal-close>
             Close
           </button>
+            <div class="tile-slider modal-slider" data-slider>
+              <div class="tile-slides" data-slider-track>
+                <img class="tile-slide is-active" src="Projects/eInkCalendar/1762628649391.jpeg" alt="" />
+              </div>
+            </div>
           <h2>E-Ink iCloud Calendar Display</h2>
           <p class="muted-text">IoT · Product build</p>
           <p>
-            Developed an IoT E-Ink display calendar integrating iCloud and
-            public holiday APIs. Built a modular, object-oriented software
-            architecture and custom layout engine with competitive materials
-            cost.
+            Developed an IoT E-Ink display calendar integrating iCloud and public holiday APIs. Built a modular, object-oriented software architecture and custom layout engine with competitive materials cost.
           </p>
           <ul class="list compact">
             <li>Merged ICS and JSON events into a single display pipeline</li>
@@ -439,12 +345,56 @@
             <li>Python, CalDAV, Pillow, FreeCAD, E-Ink hardware</li>
           </ul>
           <div class="modal-links">
-            <a class="text-link" href="https://github.com/willchristophersander/E-Ink-Calendar"
-              >Repository on GitHub</a
-            >
+          <a class="text-link" href="https://github.com/willchristophersander/E-Ink-Calendar">Repository on GitHub</a>
           </div>
+
         </div>
       </div>
+
+      <div class="modal" id="project-projectManager" aria-hidden="true" role="dialog">
+        <div class="modal-backdrop" data-modal-close></div>
+        <div class="modal-content" role="document">
+          <button class="modal-close" type="button" data-modal-close>
+            Close
+          </button>
+            <div class="tile-slider modal-slider" data-slider>
+                          <button
+              class="tile-arrow tile-arrow--left"
+              type="button"
+              aria-label="Previous image"
+              data-slider-prev
+            >
+              ‹
+            </button>
+            <button
+              class="tile-arrow tile-arrow--right"
+              type="button"
+              aria-label="Next image"
+              data-slider-next
+            >
+              ›
+            </button>
+<div class="tile-slides" data-slider-track>
+                <img class="tile-slide is-active" src="Projects/projectManager/Screenshot 2026-02-06 at 10.03.15 PM.png" alt="" />
+                <img class="tile-slide" src="Projects/projectManager/Screenshot 2026-02-06 at 8.47.25 PM.png" alt="" />
+              </div>
+            </div>
+          <h2>Website Project Manager</h2>
+          <p class="muted-text"></p>
+          <p>
+            MacOS GUI program that uses Python to convert user inputs into HTML code dynamically, compiling final output for this website.
+          </p>
+          <ul class="list compact">
+            
+          </ul>
+          <div class="modal-links">
+          
+          </div>
+
+        </div>
+      </div>
+
+<!-- PROJECT_MODALS:END -->
     </main>
 
     <footer class="site-footer">

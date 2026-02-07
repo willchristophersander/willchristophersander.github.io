@@ -9,6 +9,7 @@ const openModal = (id) => {
   modal.classList.add("is-open");
   modal.setAttribute("aria-hidden", "false");
   document.body.classList.add("modal-open");
+  modal.querySelectorAll("[data-slider]").forEach((slider) => initSlider(slider));
 };
 
 const closeModal = (modal) => {
@@ -49,102 +50,40 @@ document.addEventListener("keydown", (event) => {
 });
 
 sliders.forEach((slider) => {
-  const itemsRaw = slider.dataset.items || "";
-  const altsRaw = slider.dataset.alts || "";
-  const titlesRaw = slider.dataset.titles || "";
-  const items = itemsRaw
-    .split("|")
-    .map((entry) => entry.trim())
-    .filter(Boolean)
-    .map((entry) => {
-      const [type, ...rest] = entry.split(":");
-      return { type, src: rest.join(":") };
+  const slides = Array.from(slider.querySelectorAll(".tile-slide"));
+  if (!slides.length) return;
+  let currentIndex = slides.findIndex((slide) => slide.classList.contains("is-active"));
+  if (currentIndex < 0) currentIndex = 0;
+
+  const updatePositions = () => {
+    const total = slides.length;
+    const prevIndex = (currentIndex - 1 + total) % total;
+    const nextIndex = (currentIndex + 1) % total;
+
+    slides.forEach((slide, idx) => {
+      slide.classList.remove(
+        "is-active",
+        "slide-prev",
+        "slide-current",
+        "slide-next",
+        "slide-hidden"
+      );
+
+      if (idx === currentIndex) {
+        slide.classList.add("is-active", "slide-current");
+      } else if (idx === prevIndex) {
+        slide.classList.add("slide-prev");
+      } else if (idx === nextIndex) {
+        slide.classList.add("slide-next");
+      } else {
+        slide.classList.add("slide-hidden");
+      }
     });
-  const alts = altsRaw.split("|");
-  const titles = titlesRaw.split("|");
-  if (!items.length) return;
-
-  let currentIndex = 0;
-  let isAnimating = false;
-
-  const getRoleSlots = () => {
-    const prevSlot = slider.querySelector(".role-left");
-    const currentSlot = slider.querySelector(".role-center");
-    const nextSlot = slider.querySelector(".role-right");
-    return { prevSlot, currentSlot, nextSlot };
   };
 
-  const setSlot = (slot, index) => {
-    const img = slot.querySelector("img");
-    const iframe = slot.querySelector("iframe");
-    if (!img || !iframe) return;
-
-    const item = items[index];
-    if (item.type === "video") {
-      iframe.src = item.src;
-      iframe.title = titles[index] || "Video";
-      iframe.classList.add("is-visible");
-      img.classList.remove("is-visible");
-      img.style.display = "none";
-      iframe.style.display = "block";
-      img.removeAttribute("src");
-      img.alt = "";
-    } else {
-      img.src = item.src;
-      img.alt = alts[index] || "";
-      img.classList.add("is-visible");
-      img.style.display = "block";
-      iframe.style.display = "none";
-      iframe.classList.remove("is-visible");
-      iframe.removeAttribute("src");
-      iframe.title = "";
-    }
-  };
-
-  const render = () => {
-    const prevIndex = (currentIndex - 1 + items.length) % items.length;
-    const nextIndex = (currentIndex + 1) % items.length;
-    const { prevSlot, currentSlot, nextSlot } = getRoleSlots();
-    if (!prevSlot || !currentSlot || !nextSlot) return;
-    setSlot(currentSlot, currentIndex);
-    if (slider.classList.contains("is-simple")) {
-      prevSlot.style.display = "none";
-      nextSlot.style.display = "none";
-      return;
-    }
-
-    prevSlot.style.display = "";
-    nextSlot.style.display = "";
-    setSlot(prevSlot, prevIndex);
-    setSlot(nextSlot, nextIndex);
-  };
-
-  const swapClasses = (direction) => {
-    const left = slider.querySelector(".role-left");
-    const center = slider.querySelector(".role-center");
-    const right = slider.querySelector(".role-right");
-    if (!left || !center || !right) return;
-
-    if (direction === "next") {
-      left.classList.replace("role-left", "role-right");
-      center.classList.replace("role-center", "role-left");
-      right.classList.replace("role-right", "role-center");
-    } else {
-      right.classList.replace("role-right", "role-left");
-      center.classList.replace("role-center", "role-right");
-      left.classList.replace("role-left", "role-center");
-    }
-  };
-
-  const animateTo = (nextIndex, direction) => {
-    if (isAnimating) return;
-    isAnimating = true;
-    swapClasses(direction);
-    setTimeout(() => {
-      currentIndex = nextIndex;
-      render();
-      isAnimating = false;
-    }, 360);
+  const showSlide = (index) => {
+    currentIndex = (index + slides.length) % slides.length;
+    updatePositions();
   };
 
   const prevButton = slider.querySelector("[data-slider-prev]");
@@ -152,22 +91,79 @@ sliders.forEach((slider) => {
 
   if (prevButton) {
     prevButton.addEventListener("click", () => {
-      if (items.length < 2) return;
-      animateTo((currentIndex - 1 + items.length) % items.length, "prev");
+      showSlide(currentIndex - 1);
     });
   }
 
   if (nextButton) {
     nextButton.addEventListener("click", () => {
-      if (items.length < 2) return;
-      animateTo((currentIndex + 1) % items.length, "next");
+      showSlide(currentIndex + 1);
     });
   }
 
-  render();
+  updatePositions();
 
-  if (items.length < 2) {
+  if (slides.length < 2) {
     if (prevButton) prevButton.style.display = "none";
     if (nextButton) nextButton.style.display = "none";
   }
 });
+
+const filterInput = document.getElementById("project-search");
+const filterChips = document.querySelectorAll(".filter-chip");
+const projectCards = document.querySelectorAll(".project-card");
+
+const activeFilters = new Set();
+const normalizeText = (text) => text.toLowerCase().trim();
+
+const matchesFilters = (card) => {
+  const query = normalizeText(filterInput?.value || "");
+  const text = normalizeText(card.textContent || "");
+  const tags = (card.dataset.tags || "")
+    .split(",")
+    .map((tag) => tag.trim());
+
+  const queryMatch = !query || text.includes(query);
+  const filterMatch =
+    activeFilters.size === 0 ||
+    Array.from(activeFilters).every((filter) => tags.includes(filter));
+
+  return queryMatch && filterMatch;
+};
+
+const updateFilters = () => {
+  projectCards.forEach((card) => {
+    card.style.display = matchesFilters(card) ? "" : "none";
+  });
+};
+
+filterChips.forEach((chip) => {
+  chip.addEventListener("click", () => {
+    const tag = chip.dataset.tag;
+    if (!tag) return;
+
+    if (tag === "all") {
+      activeFilters.clear();
+      filterChips.forEach((c) => c.classList.remove("is-active"));
+      chip.classList.add("is-active");
+      updateFilters();
+      return;
+    }
+
+    document
+      .querySelector('.filter-chip[data-tag="all"]')
+      ?.classList.remove("is-active");
+
+    if (activeFilters.has(tag)) {
+      activeFilters.delete(tag);
+      chip.classList.remove("is-active");
+    } else {
+      activeFilters.add(tag);
+      chip.classList.add("is-active");
+    }
+
+    updateFilters();
+  });
+});
+
+filterInput?.addEventListener("input", updateFilters);

@@ -1,0 +1,339 @@
+{
+  "tags": [
+    {
+      "id": "python",
+      "label": "Python"
+    },
+    {
+      "id": "machine-learning",
+      "label": "Machine Learning"
+    },
+    {
+      "id": "pytorch",
+      "label": "PyTorch"
+    },
+    {
+      "id": "neural-network",
+      "label": "Neural Network"
+    },
+    {
+      "id": "c++",
+      "label": "C++"
+    },
+    {
+      "id": "opengl",
+      "label": "OpenGL"
+    },
+    {
+      "id": "graphics",
+      "label": "Graphics"
+    },
+    {
+      "id": "iot",
+      "label": "IoT"
+    },
+    {
+      "id": "hardware",
+      "label": "Hardware"
+    },
+    {
+      "id": "java",
+      "label": "Java"
+    },
+    {
+      "id": "html",
+      "label": "HTML"
+    },
+    {
+      "id": "gui",
+      "label": "GUI"
+    },
+    {
+      "id": "macos",
+      "label": "MacOS"
+    }
+  ],
+  "featured": [
+    "crnn",
+    "canvas",
+    "eink",
+    "projectManager"
+  ],
+  "projects": [
+    {
+      "id": "crnn",
+      "title": "AI Speech Emotion Recognition System",
+      "subtitle": "UVM · Advanced Machine Learning",
+      "summary": "CRNN + attention for multilingual SER.",
+      "bullets": [
+        "81.29% accuracy / 83.63% F1",
+        "10–20ms real-time inference"
+      ],
+      "tags": [
+        "python",
+        "machine-learning",
+        "pytorch",
+        "neural-network"
+      ],
+      "tileItems": [
+        {
+          "type": "image",
+          "src": "Projects/EmotionCRNN/EmotionCRNN.png"
+        },
+        {
+          "type": "image",
+          "src": "Projects/EmotionCRNN/EmotionCRNN2.png"
+        },
+        {
+          "type": "image",
+          "src": "Projects/EmotionCRNN/UVMComputerScienceFair.png"
+        }
+      ],
+      "tileAlts": [
+        "",
+        "Emotion CRNN model output",
+        "UVM computer science fair poster"
+      ],
+      "modal": {
+        "title": "AI Speech Emotion Recognition System",
+        "subtitle": "UVM · Advanced Machine Learning",
+        "body": "Built a CRNN architecture (CNN + BiLSTM + Attention) for multilingual speech emotion recognition across eight datasets. Designed the training pipeline, evaluation, and interpretability tools, then deployed real-time inference with Flask.",
+        "bullets": [
+          "81.29% accuracy / 83.63% F1 (4-class) and 76.76% accuracy / 82.80% F1 (6-class)",
+          "Distance-weighted loss using arousal–valence theory and multilingual training",
+          "PyTorch, Python, Flask, Grad-CAM, attention maps"
+        ],
+        "links": [
+          {
+            "label": "Repository on GitHub",
+            "href": "https://github.com/willchristophersander/SpeechEmotionCS3540"
+          },
+          {
+            "label": "Final report (PDF)",
+            "href": "Projects/EmotionCRNN/CS3540_Final_Report.pdf"
+          }
+        ],
+        "sliderItems": [
+          {
+            "type": "image",
+            "src": "Projects/EmotionCRNN/EmotionCRNN.png"
+          },
+          {
+            "type": "image",
+            "src": "Projects/EmotionCRNN/EmotionCRNN2.png"
+          },
+          {
+            "type": "image",
+            "src": "Projects/EmotionCRNN/UVMComputerScienceFair.png"
+          }
+        ],
+        "sliderAlts": [
+          "",
+          "",
+          ""
+        ],
+        "reportPdf": "Projects/EmotionCRNN/CS3540_Final_Report.pdf",
+        "sliderTitles": [
+          "",
+          "",
+          ""
+        ]
+      },
+      "tileTitles": [
+        "",
+        "",
+        ""
+      ]
+    },
+    {
+      "id": "canvas",
+      "title": "C++ Canvas Raster Graphics Editor",
+      "subtitle": "UVM · Advanced Programming",
+      "summary": "Real-time raster editor with layered buffers.",
+      "bullets": [
+        "7 tools + diff-based undo/redo",
+        "Lazy CPU→GPU texture updates"
+      ],
+      "tags": [
+        "c++",
+        "opengl",
+        "graphics"
+      ],
+      "tileItems": [
+        {
+          "type": "video",
+          "src": "https://www.youtube.com/embed/DYT15DFBhdc"
+        },
+        {
+          "type": "image",
+          "src": "Projects/Canvas/Screenshot 2026-02-06 at 8.57.05 PM.png"
+        }
+      ],
+      "tileTitles": [
+        "",
+        ""
+      ],
+      "tileAlts": [
+        "",
+        "C++ Canvas raster editor screenshot"
+      ],
+      "modal": {
+        "title": "C++ Canvas Raster Graphics Editor",
+        "subtitle": "UVM · Advanced Programming",
+        "body": "Built a real-time raster graphics engine with seven tools, multi-layer RGBA buffers, and diff-based undo/redo. Implemented OpenGL rendering with lazy texture updates and software blending, plus image filters via Python C API + NumPy.",
+        "bullets": [
+          "60 FPS at 800×600 with lazy CPU→GPU texture updates",
+          "Custom rasterization and per-pixel alpha compositing",
+          "C++, OpenGL, ImGui, Python C API, NumPy"
+        ],
+        "links": [
+          {
+            "label": "Video demo",
+            "href": "https://youtu.be/DYT15DFBhdc"
+          },
+          {
+            "label": "Repository on GitHub",
+            "href": "https://github.com/willchristophersander/Canvas"
+          }
+        ],
+        "sliderItems": [
+          {
+            "type": "video",
+            "src": "https://www.youtube.com/embed/DYT15DFBhdc"
+          },
+          {
+            "type": "image",
+            "src": "Projects/Canvas/Screenshot 2026-02-06 at 8.57.05 PM.png"
+          }
+        ],
+        "sliderTitles": [
+          "",
+          ""
+        ],
+        "sliderAlts": [
+          "",
+          ""
+        ]
+      }
+    },
+    {
+      "id": "eink",
+      "title": "E-Ink iCloud Calendar Display",
+      "subtitle": "IoT · Product build",
+      "summary": "Modular E-Ink calendar integrating iCloud.",
+      "bullets": [
+        "Unified ICS + JSON event pipeline",
+        "Custom layout engine"
+      ],
+      "tags": [
+        "python",
+        "graphics",
+        "iot",
+        "hardware",
+        "gui"
+      ],
+      "tileItems": [
+        {
+          "type": "image",
+          "src": "Projects/eInkCalendar/1762628649391.jpeg"
+        }
+      ],
+      "tileAlts": [
+        ""
+      ],
+      "modal": {
+        "title": "E-Ink iCloud Calendar Display",
+        "subtitle": "IoT · Product build",
+        "body": "Developed an IoT E-Ink display calendar integrating iCloud and public holiday APIs. Built a modular, object-oriented software architecture and custom layout engine with competitive materials cost.",
+        "bullets": [
+          "Merged ICS and JSON events into a single display pipeline",
+          "Custom layout engine for readable, minimal displays",
+          "Python, CalDAV, Pillow, FreeCAD, E-Ink hardware"
+        ],
+        "links": [
+          {
+            "label": "Repository on GitHub",
+            "href": "https://github.com/willchristophersander/E-Ink-Calendar"
+          }
+        ],
+        "sliderItems": [
+          {
+            "type": "image",
+            "src": "Projects/eInkCalendar/1762628649391.jpeg"
+          }
+        ],
+        "sliderAlts": [
+          ""
+        ],
+        "sliderTitles": [
+          ""
+        ]
+      },
+      "tileTitles": [
+        ""
+      ]
+    },
+    {
+      "id": "projectManager",
+      "title": "Website Project Manager",
+      "subtitle": "William Sander · Personal Project",
+      "summary": "MacOS GUI program that uses Python to convert user inputs into HTML code dynamically, compiling final output for this website.",
+      "bullets": [],
+      "tags": [
+        "python",
+        "html",
+        "gui",
+        "macos"
+      ],
+      "tileItems": [
+        {
+          "type": "image",
+          "src": "Projects/projectManager/Screenshot 2026-02-06 at 10.03.15 PM.png"
+        },
+        {
+          "type": "video",
+          "src": "https://www.youtube.com/embed/zdklcfbCp5E"
+        },
+        {
+          "type": "image",
+          "src": "Projects/projectManager/Screenshot 2026-02-06 at 8.47.25 PM.png"
+        }
+      ],
+      "tileAlts": [
+        "",
+        "",
+        ""
+      ],
+      "tileTitles": [
+        "",
+        "",
+        ""
+      ],
+      "modal": {
+        "title": "Website Project Manager",
+        "subtitle": "",
+        "body": "MacOS GUI program that uses Python to convert user inputs into HTML code dynamically, compiling final output for this website.",
+        "bullets": [],
+        "links": [],
+        "sliderItems": [
+          {
+            "type": "image",
+            "src": "Projects/projectManager/Screenshot 2026-02-06 at 10.03.15 PM.png"
+          },
+          {
+            "type": "image",
+            "src": "Projects/projectManager/Screenshot 2026-02-06 at 8.47.25 PM.png"
+          }
+        ],
+        "sliderAlts": [
+          "",
+          ""
+        ],
+        "sliderTitles": [
+          "",
+          ""
+        ]
+      }
+    }
+  ]
+}
