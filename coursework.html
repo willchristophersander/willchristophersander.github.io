@@ -1,0 +1,1118 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Coursework | Will Christopher Sander</title>
+    <meta
+      name="description"
+      content="Selected coursework in software engineering, ML, and systems."
+    />
+    <link rel="stylesheet" href="assets/css/style.css?v=20260206" />
+  </head>
+  <body>
+    <header class="site-header">
+      <div class="container">
+        <a class="logo" href="index.html">Will Christopher Sander</a>
+        <nav class="site-nav" aria-label="Main navigation">
+          <a href="index.html">Home</a>
+          <a href="projects.html">Projects</a>
+          <a href="code-reviews.html">Code Reviews</a>
+          <a class="active" href="coursework.html">Coursework</a>
+          <a href="socials.html">Socials</a>
+          <a href="resume.html">Resume</a>
+        </nav>
+      </div>
+    </header>
+
+    <main>
+      <section class="page-hero">
+        <div class="container">
+          <h1>Coursework</h1>
+          <p class="lede">
+            Selected UVM Computer Science courses that shaped my engineering and
+            machine learning focus.
+          </p>
+        </div>
+      </section>
+
+      <section class="section">
+        <div class="container">
+          <div class="section-head">
+            <h2>Coursework by focus</h2>
+            <p class="lede">
+              Click a course to open the syllabus and details.
+            </p>
+          </div>
+
+          <div class="filter-bar">
+            <label class="filter-search">
+              <span class="filter-label">Search courses</span>
+              <input
+                id="course-search"
+                type="search"
+                placeholder="Search by course name or topic"
+              />
+            </label>
+            <div>
+              <span class="filter-label">Filter by category</span>
+              <div class="filter-tags">
+                <button class="filter-chip is-active" type="button" data-tag="all">
+                  All
+                </button>
+                <button class="filter-chip" type="button" data-tag="math">
+                  Mathematics
+                </button>
+                <button class="filter-chip" type="button" data-tag="statistics">
+                  Statistics
+                </button>
+                <button class="filter-chip" type="button" data-tag="cs-theory">
+                  CS Theory
+                </button>
+                <button class="filter-chip" type="button" data-tag="cs-apps">
+                  CS Applications
+                </button>
+                <button class="filter-chip" type="button" data-tag="ml-ai">
+                  Machine Learning &amp; AI
+                </button>
+              </div>
+            </div>
+            <div>
+              <span class="filter-label">Filter by language</span>
+              <div class="filter-tags">
+                <button
+                  class="filter-chip is-active"
+                  type="button"
+                  data-lang="all"
+                >
+                  Any
+                </button>
+                <button class="filter-chip" type="button" data-lang="c++">
+                  C++
+                </button>
+                <button class="filter-chip" type="button" data-lang="c">
+                  C
+                </button>
+                <button class="filter-chip" type="button" data-lang="python">
+                  Python
+                </button>
+                <button class="filter-chip" type="button" data-lang="java">
+                  Java
+                </button>
+                <button class="filter-chip" type="button" data-lang="r">R</button>
+                <button class="filter-chip" type="button" data-lang="sql">
+                  SQL
+                </button>
+                <button class="filter-chip" type="button" data-lang="assembly">
+                  Assembly
+                </button>
+              </div>
+            </div>
+          </div>
+
+          <div class="course-results" data-course-results></div>
+        </div>
+      </section>
+
+      <div data-course-library hidden>
+        <button
+          class="course-chip"
+          type="button"
+          data-course-open="stat2510b-applied-probability"
+          data-categories="statistics"
+          data-tags="statistics, probability"
+          data-langs=""
+        >
+          STAT2510B Applied Probability
+        </button>
+        <button
+          class="course-chip"
+          type="button"
+          data-course-open="stat2870ol1-basics-of-data-science"
+          data-categories="statistics"
+          data-tags="statistics, data-science, r"
+          data-langs="r"
+        >
+          STAT2870OL1 Basics Of Data Science
+        </button>
+        <button
+          class="course-chip"
+          type="button"
+          data-course-open="cs1640a-discrete-structures"
+          data-categories="cs-theory, math"
+          data-tags="cs-theory, math, discrete, logic"
+          data-langs=""
+        >
+          CS1640A Discrete Structures
+        </button>
+        <button
+          class="course-chip"
+          type="button"
+          data-course-open="cs3240b-algorithm-design-analysis"
+          data-categories="cs-theory"
+          data-tags="cs-theory, algorithms, analysis"
+          data-langs="java"
+        >
+          CS3240B Algorithm Design &amp; Analysis
+        </button>
+        <button
+          class="course-chip"
+          type="button"
+          data-course-open="cs2300a-advanced-programming"
+          data-categories="cs-apps"
+          data-tags="cs-apps, c++, programming"
+          data-langs="c++"
+        >
+          CS2300A Advanced Programming (C++)
+        </button>
+        <button
+          class="course-chip"
+          type="button"
+          data-course-open="cs3870a-data-science-pinnacle"
+          data-categories="cs-apps"
+          data-tags="cs-apps, data-science, python"
+          data-langs="python"
+        >
+          CS3870A Data Science I - Pinnacle
+        </button>
+        <button
+          class="course-chip"
+          type="button"
+          data-course-open="cs3540-advanced-machine-learning"
+          data-categories="ml-ai"
+          data-tags="ml-ai, machine-learning, python"
+          data-langs="python"
+        >
+          CS3540 Advanced Machine Learning
+        </button>
+        <button
+          class="course-chip"
+          type="button"
+          data-course-open="cs3060-evolutionary-robotics"
+          data-categories="ml-ai, cs-apps"
+          data-tags="ml-ai, cs-apps, robotics, evolution"
+          data-langs="python"
+        >
+          CS3060 Evolutionary Robotics
+        </button>
+        <button
+          class="course-chip"
+          type="button"
+          data-course-open="chin1100-first-year-college-chinese"
+          data-categories="humanities"
+          data-tags="humanities, language, chinese"
+          data-langs=""
+        >
+          CHIN1100 1st Year College Chinese
+        </button>
+        <button
+          class="course-chip"
+          type="button"
+          data-course-open="math2522-applied-linear-algebra"
+          data-categories="math"
+          data-tags="math, linear-algebra"
+          data-langs=""
+        >
+          MATH2522 Applied Linear Algebra
+        </button>
+        <button
+          class="course-chip"
+          type="button"
+          data-course-open="cis2031-cpp-programming-1"
+          data-categories="cs-apps"
+          data-tags="cs-apps, programming, c++"
+          data-langs="c++"
+        >
+          CIS2031 C/C++ Programming I
+        </button>
+        <button
+          class="course-chip"
+          type="button"
+          data-course-open="cis2032-cpp-programming-2"
+          data-categories="cs-apps"
+          data-tags="cs-apps, programming, c++"
+          data-langs="c++"
+        >
+          CIS2032 C/C++ Programming II
+        </button>
+        <button
+          class="course-chip"
+          type="button"
+          data-course-open="math022-calculus-2"
+          data-categories="math"
+          data-tags="math, calculus"
+          data-langs=""
+        >
+          MATH022 Calculus II
+        </button>
+        <button
+          class="course-chip"
+          type="button"
+          data-course-open="math2248-calculus-3"
+          data-categories="math"
+          data-tags="math, calculus"
+          data-langs=""
+        >
+          MATH2248 Calculus III
+        </button>
+        <button
+          class="course-chip"
+          type="button"
+          data-course-open="cs2210-computer-organization"
+          data-categories="cs-theory"
+          data-tags="cs-theory, systems, computer-organization"
+          data-langs="assembly"
+        >
+          CS2210 Computer Organization
+        </button>
+        <button
+          class="course-chip"
+          type="button"
+          data-course-open="cs2240-data-structures-algorithms"
+          data-categories="cs-theory"
+          data-tags="cs-theory, data-structures, algorithms"
+          data-langs=""
+        >
+          CS2240 Data Struc &amp; Algorithms
+        </button>
+        <button
+          class="course-chip"
+          type="button"
+          data-course-open="cis1360-database-management-systems"
+          data-categories="cs-apps"
+          data-tags="cs-apps, database, sql"
+          data-langs="sql"
+        >
+          CIS1360 Database Management Systems
+        </button>
+        <button
+          class="course-chip"
+          type="button"
+          data-course-open="cis1100-intro-to-computer-science"
+          data-categories="cs-apps"
+          data-tags="cs-apps, fundamentals"
+          data-langs=""
+        >
+          CIS1100 Introduction to Computer Science
+        </button>
+        <button
+          class="course-chip"
+          type="button"
+          data-course-open="cis2261-intro-to-java-1"
+          data-categories="cs-apps"
+          data-tags="cs-apps, java"
+          data-langs="java"
+        >
+          CIS2261 Introduction to Java I
+        </button>
+        <button
+          class="course-chip"
+          type="button"
+          data-course-open="cis2262-intro-to-java-2"
+          data-categories="cs-apps"
+          data-tags="cs-apps, java"
+          data-langs="java"
+        >
+          CIS2262 Introduction to Java II
+        </button>
+        <button
+          class="course-chip"
+          type="button"
+          data-course-open="cs3010-operating-systems"
+          data-categories="cs-theory"
+          data-tags="cs-theory, systems, operating-systems"
+          data-langs="c"
+        >
+          CS3010 Operating Systems
+        </button>
+        <button
+          class="course-chip"
+          type="button"
+          data-course-open="cis2210-python-programming"
+          data-categories="cs-apps"
+          data-tags="cs-apps, python"
+          data-langs="python"
+        >
+          CIS2210 Python Programming
+        </button>
+        <button
+          class="course-chip"
+          type="button"
+          data-course-open="cs3120-secure-distributed-computation"
+          data-categories="cs-theory"
+          data-tags="cs-theory, security, distributed"
+          data-langs=""
+        >
+          CS3120 Secure Distributed Computation
+        </button>
+        <button
+          class="course-chip"
+          type="button"
+          data-course-open="stat2430-statistics-for-engineering"
+          data-categories="statistics"
+          data-tags="statistics, engineering"
+          data-langs=""
+        >
+          STAT2430 Statistics for Engineering
+        </button>
+      </div>
+
+      <section aria-hidden="true">
+        <div
+          class="modal"
+          id="course-stat2510b-applied-probability"
+          aria-hidden="true"
+          role="dialog"
+        >
+          <div class="modal-backdrop" data-course-close></div>
+          <div class="modal-content" role="document">
+            <button class="modal-close" type="button" data-course-close>Close</button>
+            <h2>STAT2510B Applied Probability</h2>
+            <p class="muted-text">Statistics</p>
+            <p>
+              Probability and statistical inference for modeling random events and
+              uncertainty in real-world systems.
+            </p>
+            <p class="muted-text">Course description</p>
+            <p>
+              In order to model a real-world phenomenon in a realistic manner one
+              must allow for the possibility of randomness. Probability provides
+              the framework for describing and understanding random events.
+              Statistics combines the art of making sense out of data and the
+              science of making decisions in the face of uncertainty due to
+              randomness.
+            </p>
+            <p>
+              We will discuss a variety of theory and applications including
+              topics in combinatorics, conditional probability, random variables,
+              mathematical expectation, limit theorems, and statistics.
+            </p>
+            <p>
+              The class will consist of recorded lectures (viewed prior to
+              class), in-class group work, discussion, and projects to highlight
+              particular topics.
+            </p>
+            <ul class="list compact">
+              <li>Combinatorics, conditional probability, and Bayes' rule</li>
+              <li>Discrete and continuous distributions</li>
+              <li>Random variables, expectation, and limit theorems</li>
+            </ul>
+            <div class="modal-pdf">
+              <h3>Syllabus</h3>
+              <object
+                data="Courses/Statistics/STAT2510B Applied Probability/STAT2510B Applied Probability.pdf"
+                type="application/pdf"
+              >
+                <p class="muted-text">
+                  Your browser does not support embedded PDFs.
+                  <a
+                    href="Courses/Statistics/STAT2510B Applied Probability/STAT2510B Applied Probability.pdf"
+                    >Download the syllabus</a
+                  >.
+                </p>
+              </object>
+            </div>
+          </div>
+        </div>
+
+        <div
+          class="modal"
+          id="course-stat2870ol1-basics-of-data-science"
+          aria-hidden="true"
+          role="dialog"
+        >
+          <div class="modal-backdrop" data-course-close></div>
+          <div class="modal-content" role="document">
+            <button class="modal-close" type="button" data-course-close>Close</button>
+            <h2>STAT2870OL1 Basics Of Data Science</h2>
+            <p class="muted-text">Statistics</p>
+            <p>
+              Intro to data science workflows using R and RStudio, from data
+              collection to modeling and communication.
+            </p>
+            <p class="muted-text">Course description</p>
+            <p>
+              Basic techniques of data harvesting and cleaning, association rules,
+              classification, clustering, and visualization using programming
+              languages.
+            </p>
+            <p>
+              Basic data science techniques from import to cleaning to visualizing
+              and modeling using the R language, including regression and
+              classification methods.
+            </p>
+            <ul class="list compact">
+              <li>Data cleaning, visualization, and R Markdown reporting</li>
+              <li>Regression, classification, and clustering methods</li>
+              <li>Ethics and effective communication of results</li>
+            </ul>
+            <div class="modal-pdf">
+              <h3>Syllabus</h3>
+              <object
+                data="Courses/Machine Learning &amp; AI/STAT2870OL1 Basics Of Data Science/STAT2870OL1 Basics Of Data Science.pdf"
+                type="application/pdf"
+              >
+                <p class="muted-text">
+                  Your browser does not support embedded PDFs.
+                  <a
+                    href="Courses/Machine Learning &amp; AI/STAT2870OL1 Basics Of Data Science/STAT2870OL1 Basics Of Data Science.pdf"
+                    >Download the syllabus</a
+                  >.
+                </p>
+              </object>
+            </div>
+          </div>
+        </div>
+
+        <div
+          class="modal"
+          id="course-cs1640a-discrete-structures"
+          aria-hidden="true"
+          role="dialog"
+        >
+          <div class="modal-backdrop" data-course-close></div>
+          <div class="modal-content" role="document">
+            <button class="modal-close" type="button" data-course-close>Close</button>
+            <h2>CS1640A Discrete Structures</h2>
+            <p class="muted-text">CS Theory</p>
+            <p>
+              Discrete math foundations for computer science: logic, proofs, and
+              formal reasoning for algorithms.
+            </p>
+            <p class="muted-text">Course description</p>
+            <p>
+              Introduction to analytic and formal methods of computer science
+              with practical examples, including logic and proofs, sets and
+              functions, primes and divisibility, analysis of data structures,
+              recursion relations, and proof methods.
+            </p>
+            <p>
+              After completing this course the student will be able to work
+              comfortably with logic, apply proof methods, use proper vocabulary,
+              operate with data, decipher and solve word problems, organize logic
+              puzzles, manipulate wording to form structural arguments, evaluate
+              data, and communicate concepts.
+            </p>
+            <ul class="list compact">
+              <li>Logic, sets, functions, and proof techniques</li>
+              <li>Divisibility, recursion, and discrete modeling</li>
+              <li>Quantitative reasoning and problem solving</li>
+            </ul>
+            <div class="modal-pdf">
+              <h3>Syllabus</h3>
+              <object
+                data="Courses/Computer Science Theory/ CS1640A Discrete Structures/ CS1640A Discrete Structures.pdf"
+                type="application/pdf"
+              >
+                <p class="muted-text">
+                  Your browser does not support embedded PDFs.
+                  <a
+                    href="Courses/Computer Science Theory/ CS1640A Discrete Structures/ CS1640A Discrete Structures.pdf"
+                    >Download the syllabus</a
+                  >.
+                </p>
+              </object>
+            </div>
+          </div>
+        </div>
+
+        <div
+          class="modal"
+          id="course-cs3240b-algorithm-design-analysis"
+          aria-hidden="true"
+          role="dialog"
+        >
+          <div class="modal-backdrop" data-course-close></div>
+          <div class="modal-content" role="document">
+            <button class="modal-close" type="button" data-course-close>Close</button>
+            <h2>CS3240B Algorithm Design &amp; Analysis</h2>
+            <p class="muted-text">CS Theory</p>
+            <p>
+              Design and analyze algorithms for real-world problems with
+              correctness and complexity guarantees.
+            </p>
+            <p class="muted-text">Course description</p>
+            <p>
+              Study of how to design and analyze algorithms to solve real-world
+              problems, starting with complexity and basic graph algorithms.
+            </p>
+            <p>
+              Covers greedy, divide-and-conquer, dynamic programming, network
+              flow, and reductions to reason about computational hardness.
+            </p>
+            <ul class="list compact">
+              <li>Greedy, divide-and-conquer, and dynamic programming</li>
+              <li>Network flow, reductions, and hardness</li>
+              <li>Weekly written and programming assignments</li>
+            </ul>
+            <div class="modal-pdf">
+              <h3>Syllabus</h3>
+              <object
+                data="Courses/Computer Science Theory/CS3240B Algorithm Design &amp; Analysis/CS3240B Algorithm Design &amp; Analysis.pdf"
+                type="application/pdf"
+              >
+                <p class="muted-text">
+                  Your browser does not support embedded PDFs.
+                  <a
+                    href="Courses/Computer Science Theory/CS3240B Algorithm Design &amp; Analysis/CS3240B Algorithm Design &amp; Analysis.pdf"
+                    >Download the syllabus</a
+                  >.
+                </p>
+              </object>
+            </div>
+          </div>
+        </div>
+
+        <div
+          class="modal"
+          id="course-cs2300a-advanced-programming"
+          aria-hidden="true"
+          role="dialog"
+        >
+          <div class="modal-backdrop" data-course-close></div>
+          <div class="modal-content" role="document">
+            <button class="modal-close" type="button" data-course-close>Close</button>
+            <h2>CS2300A Advanced Programming (C++)</h2>
+            <p class="muted-text">CS Applications</p>
+            <p>
+              Project-based C++ course focused on collaboration, graphics, and
+              multi-language development.
+            </p>
+            <p class="muted-text">Course description</p>
+            <p>
+              Project-based course separated into four modules covering C++ with
+              guided and open-ended projects, oral and written assignments, and
+              collaboration.
+            </p>
+            <ul class="list compact">
+              <li>Four modules of guided and open-ended projects</li>
+              <li>Event-driven graphics and tooling</li>
+              <li>Git + CLion + Gradescope workflow</li>
+            </ul>
+            <div class="modal-pdf">
+              <h3>Syllabus</h3>
+              <object
+                data="Courses/Computer Science Theory/CS2300A Advanced Programming/CS2300A Advanced Programming.pdf"
+                type="application/pdf"
+              >
+                <p class="muted-text">
+                  Your browser does not support embedded PDFs.
+                  <a
+                    href="Courses/Computer Science Theory/CS2300A Advanced Programming/CS2300A Advanced Programming.pdf"
+                    >Download the syllabus</a
+                  >.
+                </p>
+              </object>
+            </div>
+          </div>
+        </div>
+
+        <div
+          class="modal"
+          id="course-cs3870a-data-science-pinnacle"
+          aria-hidden="true"
+          role="dialog"
+        >
+          <div class="modal-backdrop" data-course-close></div>
+          <div class="modal-content" role="document">
+            <button class="modal-close" type="button" data-course-close>Close</button>
+            <h2>CS3870A Data Science I - Pinnacle</h2>
+            <p class="muted-text">CS Applications</p>
+            <p>
+              Bridge model development with real-world data deployment through a
+              semester-long project.
+            </p>
+            <p class="muted-text">Course description</p>
+            <p>
+              Bridge the gap between model development and real-world deployment
+              of a data analysis project, emphasizing modern data science tools.
+            </p>
+            <p>
+              Project work spans experimental design, ethics, web scraping and
+              APIs, and causal inference.
+            </p>
+            <ul class="list compact">
+              <li>Experimental design, ethics, and problem framing</li>
+              <li>Web scraping, APIs, and causal inference</li>
+              <li>Python-based analysis and presentation</li>
+            </ul>
+            <div class="modal-pdf">
+              <h3>Syllabus</h3>
+              <object
+                data="Courses/Statistics/CS3870A Data Science I - Pinnacle/CS3870A Data Science I - Pinnacle.pdf"
+                type="application/pdf"
+              >
+                <p class="muted-text">
+                  Your browser does not support embedded PDFs.
+                  <a
+                    href="Courses/Statistics/CS3870A Data Science I - Pinnacle/CS3870A Data Science I - Pinnacle.pdf"
+                    >Download the syllabus</a
+                  >.
+                </p>
+              </object>
+            </div>
+          </div>
+        </div>
+
+        <div
+          class="modal"
+          id="course-cs3540-advanced-machine-learning"
+          aria-hidden="true"
+          role="dialog"
+        >
+          <div class="modal-backdrop" data-course-close></div>
+          <div class="modal-content" role="document">
+            <button class="modal-close" type="button" data-course-close>Close</button>
+            <h2>CS3540 Advanced Machine Learning</h2>
+            <p class="muted-text">Machine Learning &amp; AI</p>
+            <p>
+              Broad ML survey with supervised, unsupervised, and deep learning
+              methods plus real-world applications.
+            </p>
+            <p class="muted-text">Course description</p>
+            <p>
+              Broad introduction to machine learning and statistical pattern
+              recognition, including supervised and unsupervised learning.
+            </p>
+            <p>
+              Topics include regression, SVMs, decision trees, ensembles,
+              clustering, dimensionality reduction, and deep learning with CNNs.
+            </p>
+            <ul class="list compact">
+              <li>Regression, SVMs, trees, ensembles, and clustering</li>
+              <li>CNNs, transfer learning, and modern applications</li>
+              <li>Python labs and a team term project</li>
+            </ul>
+            <div class="modal-pdf">
+              <h3>Syllabus</h3>
+              <object
+                data="Courses/Machine Learning &amp; AI/CS3540 Advanced Machine Learning/CS3540 Advanced Machine Learning.pdf"
+                type="application/pdf"
+              >
+                <p class="muted-text">
+                  Your browser does not support embedded PDFs.
+                  <a
+                    href="Courses/Machine Learning &amp; AI/CS3540 Advanced Machine Learning/CS3540 Advanced Machine Learning.pdf"
+                    >Download the syllabus</a
+                  >.
+                </p>
+              </object>
+            </div>
+          </div>
+        </div>
+
+        <div
+          class="modal"
+          id="course-cs3060-evolutionary-robotics"
+          aria-hidden="true"
+          role="dialog"
+        >
+          <div class="modal-backdrop" data-course-close></div>
+          <div class="modal-content" role="document">
+            <button class="modal-close" type="button" data-course-close>Close</button>
+            <h2>CS3060 Evolutionary Robotics</h2>
+            <p class="muted-text">Machine Learning &amp; AI</p>
+            <p>
+              Automated design of robot behaviors using evolutionary algorithms
+              and simulation-based evaluation.
+            </p>
+            <p class="muted-text">Course description</p>
+            <p>
+              Explore the automated design of autonomous machines using
+              evolutionary algorithms.
+            </p>
+            <p>
+              Covers evolutionary computation, neural networks, robotics,
+              biomechanics, and simulation with a major Python project.
+            </p>
+            <ul class="list compact">
+              <li>Evolutionary computation and neural controllers</li>
+              <li>Robot simulation and performance testing</li>
+              <li>Major Python project and final experiment report</li>
+            </ul>
+            <div class="modal-pdf">
+              <h3>Syllabus</h3>
+              <object
+                data="Courses/Machine Learning &amp; AI/CS3060 Evolutionary Robotics/CS3060 Evolutionary Robotics.pdf"
+                type="application/pdf"
+              >
+                <p class="muted-text">
+                  Your browser does not support embedded PDFs.
+                  <a
+                    href="Courses/Machine Learning &amp; AI/CS3060 Evolutionary Robotics/CS3060 Evolutionary Robotics.pdf"
+                    >Download the syllabus</a
+                  >.
+                </p>
+              </object>
+            </div>
+          </div>
+        </div>
+
+        <div class="modal" id="course-chin1100-first-year-college-chinese" aria-hidden="true" role="dialog">
+          <div class="modal-backdrop" data-course-close></div>
+          <div class="modal-content" role="document">
+            <button class="modal-close" type="button" data-course-close>Close</button>
+            <h2>CHIN1100 1st Year College Chinese</h2>
+            <p class="muted-text">Humanities</p>
+            <p>Details coming soon.</p>
+          </div>
+        </div>
+
+        <div class="modal" id="course-math2522-applied-linear-algebra" aria-hidden="true" role="dialog">
+          <div class="modal-backdrop" data-course-close></div>
+          <div class="modal-content" role="document">
+            <button class="modal-close" type="button" data-course-close>Close</button>
+            <h2>MATH2522 Applied Linear Algebra</h2>
+            <p class="muted-text">Mathematics</p>
+            <p>Details coming soon.</p>
+          </div>
+        </div>
+
+        <div class="modal" id="course-cis2031-cpp-programming-1" aria-hidden="true" role="dialog">
+          <div class="modal-backdrop" data-course-close></div>
+          <div class="modal-content" role="document">
+            <button class="modal-close" type="button" data-course-close>Close</button>
+            <h2>CIS2031 C/C++ Programming I</h2>
+            <p class="muted-text">CS Applications</p>
+            <p>Details coming soon.</p>
+          </div>
+        </div>
+
+        <div class="modal" id="course-cis2032-cpp-programming-2" aria-hidden="true" role="dialog">
+          <div class="modal-backdrop" data-course-close></div>
+          <div class="modal-content" role="document">
+            <button class="modal-close" type="button" data-course-close>Close</button>
+            <h2>CIS2032 C/C++ Programming II</h2>
+            <p class="muted-text">CS Applications</p>
+            <p>Details coming soon.</p>
+          </div>
+        </div>
+
+        <div class="modal" id="course-math022-calculus-2" aria-hidden="true" role="dialog">
+          <div class="modal-backdrop" data-course-close></div>
+          <div class="modal-content" role="document">
+            <button class="modal-close" type="button" data-course-close>Close</button>
+            <h2>MATH022 Calculus II</h2>
+            <p class="muted-text">Mathematics</p>
+            <p>Details coming soon.</p>
+          </div>
+        </div>
+
+        <div class="modal" id="course-math2248-calculus-3" aria-hidden="true" role="dialog">
+          <div class="modal-backdrop" data-course-close></div>
+          <div class="modal-content" role="document">
+            <button class="modal-close" type="button" data-course-close>Close</button>
+            <h2>MATH2248 Calculus III</h2>
+            <p class="muted-text">Mathematics</p>
+            <p>Details coming soon.</p>
+          </div>
+        </div>
+
+        <div class="modal" id="course-cs2210-computer-organization" aria-hidden="true" role="dialog">
+          <div class="modal-backdrop" data-course-close></div>
+          <div class="modal-content" role="document">
+            <button class="modal-close" type="button" data-course-close>Close</button>
+            <h2>CS2210 Computer Organization</h2>
+            <p class="muted-text">CS Theory</p>
+            <p>Details coming soon.</p>
+          </div>
+        </div>
+
+        <div class="modal" id="course-cs2240-data-structures-algorithms" aria-hidden="true" role="dialog">
+          <div class="modal-backdrop" data-course-close></div>
+          <div class="modal-content" role="document">
+            <button class="modal-close" type="button" data-course-close>Close</button>
+            <h2>CS2240 Data Struc &amp; Algorithms</h2>
+            <p class="muted-text">CS Theory</p>
+            <p>Details coming soon.</p>
+          </div>
+        </div>
+
+        <div class="modal" id="course-cis1360-database-management-systems" aria-hidden="true" role="dialog">
+          <div class="modal-backdrop" data-course-close></div>
+          <div class="modal-content" role="document">
+            <button class="modal-close" type="button" data-course-close>Close</button>
+            <h2>CIS1360 Database Management Systems</h2>
+            <p class="muted-text">CS Applications</p>
+            <p>Details coming soon.</p>
+          </div>
+        </div>
+
+        <div class="modal" id="course-cis1100-intro-to-computer-science" aria-hidden="true" role="dialog">
+          <div class="modal-backdrop" data-course-close></div>
+          <div class="modal-content" role="document">
+            <button class="modal-close" type="button" data-course-close>Close</button>
+            <h2>CIS1100 Introduction to Computer Science</h2>
+            <p class="muted-text">CS Applications</p>
+            <p>Details coming soon.</p>
+          </div>
+        </div>
+
+        <div class="modal" id="course-cis2261-intro-to-java-1" aria-hidden="true" role="dialog">
+          <div class="modal-backdrop" data-course-close></div>
+          <div class="modal-content" role="document">
+            <button class="modal-close" type="button" data-course-close>Close</button>
+            <h2>CIS2261 Introduction to Java I</h2>
+            <p class="muted-text">CS Applications</p>
+            <p>Details coming soon.</p>
+          </div>
+        </div>
+
+        <div class="modal" id="course-cis2262-intro-to-java-2" aria-hidden="true" role="dialog">
+          <div class="modal-backdrop" data-course-close></div>
+          <div class="modal-content" role="document">
+            <button class="modal-close" type="button" data-course-close>Close</button>
+            <h2>CIS2262 Introduction to Java II</h2>
+            <p class="muted-text">CS Applications</p>
+            <p>Details coming soon.</p>
+          </div>
+        </div>
+
+        <div class="modal" id="course-cs3010-operating-systems" aria-hidden="true" role="dialog">
+          <div class="modal-backdrop" data-course-close></div>
+          <div class="modal-content" role="document">
+            <button class="modal-close" type="button" data-course-close>Close</button>
+            <h2>CS3010 Operating Systems</h2>
+            <p class="muted-text">CS Theory</p>
+            <p>Details coming soon.</p>
+          </div>
+        </div>
+
+        <div class="modal" id="course-cis2210-python-programming" aria-hidden="true" role="dialog">
+          <div class="modal-backdrop" data-course-close></div>
+          <div class="modal-content" role="document">
+            <button class="modal-close" type="button" data-course-close>Close</button>
+            <h2>CIS2210 Python Programming</h2>
+            <p class="muted-text">CS Applications</p>
+            <p>Details coming soon.</p>
+          </div>
+        </div>
+
+        <div class="modal" id="course-cs3120-secure-distributed-computation" aria-hidden="true" role="dialog">
+          <div class="modal-backdrop" data-course-close></div>
+          <div class="modal-content" role="document">
+            <button class="modal-close" type="button" data-course-close>Close</button>
+            <h2>CS3120 Secure Distributed Computation</h2>
+            <p class="muted-text">CS Theory</p>
+            <p>Details coming soon.</p>
+          </div>
+        </div>
+
+        <div class="modal" id="course-stat2430-statistics-for-engineering" aria-hidden="true" role="dialog">
+          <div class="modal-backdrop" data-course-close></div>
+          <div class="modal-content" role="document">
+            <button class="modal-close" type="button" data-course-close>Close</button>
+            <h2>STAT2430 Statistics for Engineering</h2>
+            <p class="muted-text">Statistics</p>
+            <p>Details coming soon.</p>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <footer class="site-footer">
+      <div class="container">
+        <span>© 2026 Will Christopher Sander</span>
+        <span>Coursework that supports my work.</span>
+      </div>
+    </footer>
+    <script>
+      const openCourseModal = (id) => {
+        const modal = document.getElementById(`course-${id}`);
+        if (!modal) return;
+        modal.classList.add("is-open");
+        modal.setAttribute("aria-hidden", "false");
+        document.body.classList.add("modal-open");
+      };
+
+      const closeCourseModal = (modal) => {
+        if (!modal) return;
+        modal.classList.remove("is-open");
+        modal.setAttribute("aria-hidden", "true");
+        document.body.classList.remove("modal-open");
+      };
+
+      document.addEventListener("click", (event) => {
+        const chip = event.target.closest("[data-course-open]");
+        if (!chip) return;
+        const id = chip.getAttribute("data-course-open");
+        if (!id) return;
+        openCourseModal(id);
+      });
+
+      document.querySelectorAll("[data-course-close]").forEach((button) => {
+        button.addEventListener("click", () => {
+          const modal = button.closest(".modal");
+          closeCourseModal(modal);
+        });
+      });
+
+      document.querySelectorAll(".modal").forEach((modal) => {
+        modal.addEventListener("click", (event) => {
+          if (event.target.classList.contains("modal-backdrop")) {
+            closeCourseModal(modal);
+          }
+        });
+      });
+
+      document.addEventListener("keydown", (event) => {
+        if (event.key !== "Escape") return;
+        const openModalEl = document.querySelector(".modal.is-open");
+        if (openModalEl) {
+          closeCourseModal(openModalEl);
+        }
+      });
+
+      const courseSearch = document.getElementById("course-search");
+      const courseFilters = document.querySelectorAll(".filter-chip[data-tag]");
+      const languageFilters = document.querySelectorAll(
+        ".filter-chip[data-lang]"
+      );
+      const courseResults = document.querySelector("[data-course-results]");
+      const courseLibrary = document.querySelector("[data-course-library]");
+      const courseButtons = Array.from(
+        courseLibrary?.querySelectorAll("[data-course-open]") || []
+      );
+
+      const courseData = courseButtons.map((button) => ({
+        id: button.getAttribute("data-course-open"),
+        title: button.textContent.trim(),
+        tags: (button.dataset.tags || "")
+          .split(",")
+          .map((tag) => tag.trim())
+          .filter(Boolean),
+        langs: (button.dataset.langs || "")
+          .split(",")
+          .map((tag) => tag.trim())
+          .filter(Boolean),
+        categories: (button.dataset.categories || "")
+          .split(",")
+          .map((tag) => tag.trim())
+          .filter(Boolean),
+        template: button,
+      }));
+
+      const activeCourseFilters = new Set();
+      const activeLanguageFilters = new Set();
+      const normalizeCourseText = (text) => text.toLowerCase().trim();
+
+      const courseMatchesFilters = (course) => {
+        const query = normalizeCourseText(courseSearch?.value || "");
+        const searchText = normalizeCourseText(
+          `${course.title} ${course.tags.join(" ")}`
+        );
+        const queryMatch = !query || searchText.includes(query);
+        const filterMatch =
+          activeCourseFilters.size === 0 ||
+          Array.from(activeCourseFilters).every((tag) => course.tags.includes(tag));
+        const languageMatch =
+          activeLanguageFilters.size === 0 ||
+          Array.from(activeLanguageFilters).every((tag) =>
+            course.langs.includes(tag)
+          );
+
+        return queryMatch && filterMatch && languageMatch;
+      };
+
+      const renderCourseResults = () => {
+        const hasFilters =
+          normalizeCourseText(courseSearch?.value || "") ||
+          activeCourseFilters.size > 0 ||
+          activeLanguageFilters.size > 0;
+
+        const matches = hasFilters
+          ? courseData.filter(courseMatchesFilters)
+          : courseData;
+        courseResults.innerHTML = "";
+
+        if (!matches.length) {
+          const empty = document.createElement("div");
+          empty.className = "card";
+          empty.textContent = "No courses match your search.";
+          courseResults.appendChild(empty);
+          return;
+        }
+
+        matches.forEach((course) => {
+          const item = document.createElement("button");
+          item.type = "button";
+          item.className = "course-result-item";
+          item.addEventListener("click", () => openCourseModal(course.id));
+
+          const title = document.createElement("div");
+          title.className = "course-result-title";
+          title.textContent = course.title;
+
+          const hint = document.createElement("div");
+          hint.className = "course-result-hint";
+          hint.textContent = "View details";
+
+          item.appendChild(title);
+          item.appendChild(hint);
+          courseResults.appendChild(item);
+        });
+      };
+
+      courseFilters.forEach((chip) => {
+        chip.addEventListener("click", () => {
+          const tag = chip.dataset.tag;
+          if (!tag) return;
+
+          if (tag === "all") {
+            activeCourseFilters.clear();
+            courseFilters.forEach((c) => c.classList.remove("is-active"));
+            chip.classList.add("is-active");
+            renderCourseResults();
+            return;
+          }
+
+          document
+            .querySelector('.filter-chip[data-tag="all"]')
+            ?.classList.remove("is-active");
+
+          if (activeCourseFilters.has(tag)) {
+            activeCourseFilters.delete(tag);
+            chip.classList.remove("is-active");
+          } else {
+            activeCourseFilters.add(tag);
+            chip.classList.add("is-active");
+          }
+
+          renderCourseResults();
+        });
+      });
+
+      languageFilters.forEach((chip) => {
+        chip.addEventListener("click", () => {
+          const tag = chip.dataset.lang;
+          if (!tag) return;
+
+          if (tag === "all") {
+            activeLanguageFilters.clear();
+            languageFilters.forEach((c) => c.classList.remove("is-active"));
+            chip.classList.add("is-active");
+            renderCourseResults();
+            return;
+          }
+
+          document
+            .querySelector('.filter-chip[data-lang="all"]')
+            ?.classList.remove("is-active");
+
+          if (activeLanguageFilters.has(tag)) {
+            activeLanguageFilters.delete(tag);
+            chip.classList.remove("is-active");
+          } else {
+            activeLanguageFilters.add(tag);
+            chip.classList.add("is-active");
+          }
+
+          renderCourseResults();
+        });
+      });
+
+      courseSearch?.addEventListener("input", renderCourseResults);
+      renderCourseResults();
+    </script>
+  </body>
+</html>

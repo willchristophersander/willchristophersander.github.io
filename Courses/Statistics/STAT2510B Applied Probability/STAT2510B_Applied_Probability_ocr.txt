@@ -1,0 +1,287 @@
+Stat 2510 Applied Probability Fall 2024
+
+Richard Single, richard.single [at] uvm [dot] edu
+Modality: Flipped with synchronous meetings on T/TH 10:05 - 11:20 in Votey 303.
+
+Required Materials:
+e Text: “Probability and Statistical Inference (9" or 10" edition)” by Robert V. Hogg & Elliot A. Tanis
+e A scientific calculator (something other than your phone)
+
+Prerequisites: Calculus II is required.
+Software:
+The software platforms MS Teams and Brightspace will be used as described in the “Required Software
+
+Platforms” section below.
+
+Please read this technology check list (https://www.uvm.edu/it/kb/student-technology-resources/) to make sure
+you are ready for classes and contact the Helpline (802-656-2604) for support with technical issues.
+
+Course description:
+
+In order to model a real-world phenomenon in a realistic manner one must allow for the possibility of
+randomness. That is, one must be able to account for events that may or may not occur (random events).
+Probability provides the framework for describing and understanding random events. Statistics combines the art
+of making sense out of data and the science of making decisions in the face of uncertainty due to randomness.
+
+We will discuss a variety of theory and applications including topics in combinatorics, conditional probability,
+random variables, mathematical expectation, limit theorems, and statistics.
+
+The class will consist of recorded lectures (viewed prior to class), in-class group work, discussion, and projects
+to highlight particular topics. It would be impossible, however, for these to encompass all of the material for the
+course. There will be some material in the text for which you will be responsible that we will not have time to
+cover in detail during class. J expect that you will be reading the material in the text.
+
+The course will cover material from chapters 1-5 in the text and additional topics if time allows.
+
+Topics Chapters
+Properties of Probability (Conditional Probability, Independent Events, Bayes' Rule) 1
+Discrete Distributions (Bernoulli, Binomial, and Poisson Distributions)
+
+Continuous Distributions (Uniform, Exponential, Gamma, Chi-square, & Normal)
+
+Bivariate Distributions (Conditional Distributions, Sums of Independent Random Variables)
+Distributions of Functions of Random Variables
+
+wl a] w]e
+
+Assignments & Policies:
+
+Watching and taking notes on the pre-recorded class videos will be an ongoing homework assignment
+throughout the course. You will submit pre-class notes before each class meeting about the video assigned for
+that day’s class. Weekly homework assignments are listed on the class webpage and will be due on Fridays by
+midnight. Late assignments will not be accepted. Your lowest homework score will be dropped.
+
+Be sure to preface the subject of any email related to the course with “STAT 2510”, otherwise I may not see
+your email (e.g., STAT 2510: your subject here).
+
+HW assignments will be submitted via Brightspace. Classwork will be submitted each meeting via MS Forms
+(using the “tinyurl” for the course).
+
+
+Stat 2510 Applied Probability Fall 2024
+
+You are encouraged to work together in groups, and you will be doing so during the synchronous class meeting
+time. Solutions to classwork and homework assignments must be written on your own. This will help to clarify
+your understanding of the material by ensuring that you have thought through the ideas for yourself. You must
+note the name(s) of any group partners on the top of any assignment that is a group effort. The best way to learn
+ideas in Probability is to do examples, so I encourage you to do as many problems as you can (in addition to
+those that you turn in!).
+
+Each assignment that you turn in must have the following header information included on the first page:
+FirstName LastName
+Stat 2510
+Homework #
+You must show your work for each problem, since no credit will be given for simply writing the final answer.
+Your grade will be reduced if the work is messy or difficult to read.
+
+Grading:
+
+Your final grade will be determined by your exams, quizzes, homework, and participation in class discussions
+according to the distribution below. Quizzes will begin weekly but may move to bi-weekly as the semester
+unfolds. Attendance will be taken at each class and will count toward your participation grade.
+
+Quizzes 10%
+
+PCN* & Participation 13% | *PCN=Pre-Class Notes
+
+HW & Projects 12%
+
+2 Exams 40% (planned for 9/26 and 11/5)
+
+Final 20% (09-DEC-2024, 10:30-13:15, VOTEY 303)
+
+Letter grades will be assigned using standard thresholds - a numerical score of 88% will translate into at least an
+A-, 78% will translate into at least a B-, 68% will translate into at least a C-, ...
+
+Recording of Class Sessions
+If there is a need to have any remote class sessions, they will be recorded for you to refer back to. Students who
+
+participate with their camera engaged or utilize a profile image are agreeing to have their video or image
+recorded. If you are unwilling to consent to have your profile or video image recorded, be sure to keep your
+camera off and do not use a profile image. Likewise, students who un-mute during class are agreeing to have
+their voices recorded. If you are not willing to consent to have your voice recorded during class, you will need
+to keep your mute button activated and communicate exclusively using the "chat" feature, which allows students
+to type questions and comments live.
+
+OTHER REQUIRED SOFTWARE PLATFORMS
+
+MS Teams
+MS Teams will be used for synchronous meetings and for office hours. Please follow this link for instructions to
+download MS Teams. When you login, you should be able to see the MS Team for our specific course.
+
+Brightspace
+I will use Brightspace to post HW solutions and collect HW assignments. I do not plan to post messages or
+
+announcements via Brightspace.
+
+Calculator (not an app on your phone)
+
+You will need to bring a scientific calculator to class that has memory storage. We will be using it for classwork
+in almost every class. You cannot use your phone for computation during classwork or for exams. The only time
+you will be using your phone during class is to scan and submit daily classwork.
+
+If I see you using your phone during class (other than for submitting classwork), I will ask you to put it away the
+first time. I will ask you to leave the second time. It is a distraction for you and those sitting near you.
+
+
+Stat 2510 Applied Probability Fall 2024
+
+ACADEMIC INTEGRITY
+
+Offences against the Code of Academic Integrity are deemed serious and insult the integrity of the entire
+
+academic community. This policy addresses plagiarism, fabrication, collusion, and
+
+cheating. https://www.uvm.edu/sites/default/files/UVM-Policies/policies/acadintegrity .pdf (PDF link).
+
+Any suspected violations of the code are taken very seriously and will be forwarded to the Center for Student
+
+Conduct for further intervention.
+
+Code of Student Conduct: https://www.uvm.edu/policies/student/studentcode.pdf (PDF link)
+
+1. Faculty and students will attend all regularly scheduled classes, except for those occasions warranting an
+excused absence under the University Attendance Policy (e.g., religious, athletic, and medical).
+
+2. Students and faculty will arrive prepared for class and on time, and will remain until the class is dismissed.
+
+3. Faculty and students will treat all members of the learning community with respect.
+
+4. Students and faculty will maintain an appropriate academic climate by refraining from all actions that disrupt
+the learning environment.
+
+COVID-19 POLICY STATEMENTS
+
+General statement regarding potential changes during the semester:
+
+http://catalogue.uvm.edu/
+
+The University of Vermont reserves the right to make changes in the course offerings, mode of delivery, degree
+requirements, charges, regulations, and procedures contained herein as educational, financial, and health, safety,
+and welfare considerations require, or as necessary to be compliant with governmental, accreditation, or public
+health directives.
+
+Green and Gold Promise:
+
+The Green and Gold Promise clearly articulates the expectations that UVM has for students, faculty, and staff to
+remain compliant with all COVID-19 recommendations from the federal CDC, the State of Vermont, and the
+City of Burlington.
+
+The Code of Student Conduct outlines policies related to violations of the Green and Gold Promise. Sanctions
+for violations include fines, educational sanctions, parent notification, probation, and suspension.
+
+Intellectual Property Statement/Prohibition on Sharing Academic Materials:
+
+Students are prohibited from publicly sharing or selling academic materials that they did not author (for
+example: class syllabus, outlines or class presentations authored by the professor, practice questions, text from
+the textbook or other copyrighted class materials, etc.); and students are prohibited from sharing assessments
+(for example homework or a take-home examination). Violations will be handled under UVM’s Intellectual
+Property policy and Code of Academic Integrity.
+
+STUDENT LEARNING ACCOMMODATIONS
+
+In keeping with University policy, any student with a documented disability interested in utilizing
+accommodations should contact SAS, the office of Student Accessibility Services on campus. SAS works with
+students and faculty in an interactive process to explore reasonable and appropriate accommodations, which are
+communicated to faculty in an accommodation letter. All students are strongly encouraged to meet with their
+faculty to discuss the accommodations they plan to use in each course. A student’s accommodation letter lists
+those accommodations that will not be implemented until the student meets with their faculty to create a plan.
+Contact SAS: A170 Living/Learning Center: 802-656-7753 (phone link).
+
+Contact Student Accessibility Services (SAS)
+A170 Living/Learning Center
+802-656-7753 (phone link)
+
+access @uvm.edu (email link)
+
+https://www.uvm.edu/academicsuccess/student_accessibility services
+
+UVM’s policy on disability certification and student support:
+https://www.uvm.edu/policies/student/disability.pdf (PDF link)
+
+
+
+Stat 2510 Applied Probability Fall 2024
+
+HEALTH AND WELLBEING
+
+The Center for Health & Wellbeing (CHWB) offers a wide range of services to support your mind, body, and
+soul while you're at UVM. The Student Health Services staff of board certified physicians, physician assistants,
+nurse practitioners, nurses, and dietitians work with patients and collaborate with other CHWB providers to
+ensure personalized and timely care to UVM students. Counseling & Psychiatry Services (CAPS) offers short-
+term individual counseling, urgent needs counseling, group counseling, outreach and education, psychiatry,
+referrals, and consultation services.
+
+Please visit their website at: http://www.uvm.edu/~chwb/ to find out more.
+
+At Living Well they believe that mental and physical health go hand in hand. They have a variety of programs
+that offer you the space to create a wellness practice that will support your goals and positive intentions. I highly
+recommend you to visit their LivingWell website at http://www.uvm.edu/~chwb/livingwell/ and checkout the
+meditation and yoga videos.
+
+Extensive research has shown the benefits of meditation towards the learning process.
+http://www.huffingtonpost.com/2013/04/08/mindfulness-meditation-benefits-health_n_3016045.html
+
+COUNSELING & PSYCHIATRY SERVICES (CAPS)
+
+Phone: (802) 656-3340
+
+If you are concerned about a UVM community member or are concerned about a specific event, we encourage
+you to contact the Dean of Students Office (802-656-3380). If you would like to remain anonymous, you can
+report your concerns online by visiting the Dean of Students website at https://www.uvm.edu/deanofstudents.
+Counseling and Psychiatry Services: https://www.uvm.edu/health/CAPS
+
+RELIGIOUS HOLIDAY POLICY STATEMENT
+
+Students have the right to practice the religion of their choice. If you need to miss class to observe a religious
+holiday, please submit the dates of your absence to me in writing by the end of the first week of classes. You
+will be permitted to make up work within a mutually agreed-upon time.
+
+GRADING
+
+Your grades will be posted on Bb. Please notify me if you find any mistakes.
+
+For information on grading and GPA calculation, go to the Registrar’s page on grading.
+https://www.uvm.edu/registrar/grades .
+
+GRADE APPEALS
+If you would like to contest a grade, please follow the procedures outlined in this
+policy: https://www.uvm.edu/policies/student/gradeappeals.pdf (PDF link)
+
+FERPA RIGHTS DISCLOSURE
+
+The purpose of this policy is to communicate the rights of students regarding access to, and privacy of their
+student educational records as provided for in the Family Educational Rights and Privacy Act (FERPA) of
+1974. https://www.uvm.edw/policies/student/ferpa.pdf (PDF link)
+
+FINAL EXAM POLICY
+The University final exam policy outlines expectations during final exams and explains timing and process of
+examination period. https://www.uvm.edu/registrar/final-exams
+
+STATEMENT ON ALCOHOL AND CANNABIS IN THE ACADEMIC ENVIRONMENT.
+As a faculty member, I want you to get the most you can out of this course. You play a crucial role in your
+education and in your readiness to learn and fully engage with the course material. It is important to note that
+alcohol and cannabis have no place in an academic environment. They can seriously impair your ability to learn
+and retain information not only in the moment you may be using, but up to 48 hours or more afterwards. In
+addition, alcohol and cannabis can:
+
+e Cause issues with attention, memory and concentration
+
+e Negatively impact the quality of how information is processed and ultimately stored
+
+e Affect sleep patterns, which interferes with long-term memory formation
+
+
+
+Stat 2510 Applied Probability Fall 2024
+
+It is my expectation that you will do everything you can to optimize your learning and to fully participate in this
+course.
+
+TIPS FOR SUCCESS
+e Checklist for success: https://learn.uvm.edu/about/support-for-students/checklist-online-credit-courses/
+e Academic support for online courses: https://www.uvm.edu/academicsuccess/online-learning-student-
+resources-remote-instruction
+e 30-minute webinar on online learning success (Mar 2020):
+https://www.youtube.com/watch?v=Xp MYsqQyvE
+
