@@ -181,7 +181,7 @@ a {
 }
 
 .tile-media {
-  height: 200px;
+  height: 150px;
   background: linear-gradient(135deg, #d6e4ff, #f8fafc);
   position: relative;
   overflow: hidden;
@@ -203,10 +203,10 @@ a {
 }
 
 .tile-body {
-  padding: 1.2rem 1.4rem 1.4rem;
+  padding: 0.95rem 1.1rem 1.1rem;
   display: flex;
   flex-direction: column;
-  gap: 0.65rem;
+  gap: 0.45rem;
 }
 
 .tile-media img {
@@ -554,7 +554,7 @@ a {
 .tile-summary {
   margin: 0;
   color: var(--muted);
-  min-height: 2.6rem;
+  min-height: 0;
 }
 
 .tile-bullets {

@@ -235,6 +235,71 @@
       }
     },
     {
+      "id": "projectManager",
+      "title": "Website Project Manager",
+      "subtitle": "William Sander \u00b7 Personal Project",
+      "summary": "MacOS GUI program that uses Python to convert user inputs into HTML code dynamically, compiling final output for this website.",
+      "bullets": [],
+      "tags": [
+        "python",
+        "html",
+        "gui",
+        "macos",
+        "github"
+      ],
+      "status": "completed",
+      "sourceStatus": "github-available",
+      "tileItems": [
+        {
+          "type": "image",
+          "src": "Projects/projectManager/Screenshot 2026-02-06 at 10.03.15\u202fPM.png"
+        },
+        {
+          "type": "video",
+          "src": "https://www.youtube.com/embed/zdklcfbCp5E"
+        },
+        {
+          "type": "image",
+          "src": "Projects/projectManager/Screenshot 2026-02-06 at 8.47.25\u202fPM.png"
+        }
+      ],
+      "tileAlts": [
+        "",
+        "",
+        ""
+      ],
+      "tileTitles": [
+        "",
+        "",
+        ""
+      ],
+      "modal": {
+        "title": "Website Project Manager",
+        "subtitle": "",
+        "body": "MacOS GUI program that uses Python to convert user inputs into HTML code dynamically, compiling final output for this website.",
+        "bullets": [],
+        "links": [],
+        "sliderItems": [
+          {
+            "type": "image",
+            "src": "Projects/projectManager/Screenshot 2026-02-06 at 10.03.15\u202fPM.png"
+          },
+          {
+            "type": "image",
+            "src": "Projects/projectManager/Screenshot 2026-02-06 at 8.47.25\u202fPM.png"
+          }
+        ],
+        "sliderAlts": [
+          "",
+          ""
+        ],
+        "sliderTitles": [
+          "",
+          ""
+        ]
+      }
+    },
+    {
       "id": "robotVacuumPlumbing",
       "title": "Robot Vacuum & Plumbing Automation",
       "subtitle": "Personal Project \u00b7 Home Automation",
@@ -369,71 +434,6 @@
       "tileTitles": [
         ""
       ]
-    },
-    {
-      "id": "projectManager",
-      "title": "Website Project Manager",
-      "subtitle": "William Sander \u00b7 Personal Project",
-      "summary": "MacOS GUI program that uses Python to convert user inputs into HTML code dynamically, compiling final output for this website.",
-      "bullets": [],
-      "tags": [
-        "python",
-        "html",
-        "gui",
-        "macos",
-        "github"
-      ],
-      "status": "completed",
-      "sourceStatus": "github-available",
-      "tileItems": [
-        {
-          "type": "image",
-          "src": "Projects/projectManager/Screenshot 2026-02-06 at 10.03.15\u202fPM.png"
-        },
-        {
-          "type": "video",
-          "src": "https://www.youtube.com/embed/zdklcfbCp5E"
-        },
-        {
-          "type": "image",
-          "src": "Projects/projectManager/Screenshot 2026-02-06 at 8.47.25\u202fPM.png"
-        }
-      ],
-      "tileAlts": [
-        "",
-        "",
-        ""
-      ],
-      "tileTitles": [
-        "",
-        "",
-        ""
-      ],
-      "modal": {
-        "title": "Website Project Manager",
-        "subtitle": "",
-        "body": "MacOS GUI program that uses Python to convert user inputs into HTML code dynamically, compiling final output for this website.",
-        "bullets": [],
-        "links": [],
-        "sliderItems": [
-          {
-            "type": "image",
-            "src": "Projects/projectManager/Screenshot 2026-02-06 at 10.03.15\u202fPM.png"
-          },
-          {
-            "type": "image",
-            "src": "Projects/projectManager/Screenshot 2026-02-06 at 8.47.25\u202fPM.png"
-          }
-        ],
-        "sliderAlts": [
-          "",
-          ""
-        ],
-        "sliderTitles": [
-          "",
-          ""
-        ]
-      }
     },
     {
       "id": "cleaningRobot",
