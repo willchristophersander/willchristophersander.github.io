@@ -8,7 +8,7 @@
       name="description"
       content="Professional summary, projects, and code philosophy."
     />
-    <link rel="stylesheet" href="assets/css/style.css?v=20260206" />
+    <link rel="stylesheet" href="assets/css/style.css?v=20260206-ui-beta" />
   </head>
   <body>
     <header class="site-header">
@@ -19,6 +19,7 @@
           <a href="projects.html">Projects</a>
           <a href="code-reviews.html">Code Reviews</a>
           <a href="coursework.html">Coursework</a>
+          <a href="experience.html">Experience</a>
           <a href="contact.html">Contact</a>
           <a href="resume.html">Resume</a>
         </nav>
@@ -115,16 +116,99 @@
         </div>
       </section>
 
+     <section class="section muted">
+        <div class="container">
+          <div class="section-head section-head--metrics">
+            <h2>Impact</h2>
+          </div>
+          <div class="accomplishments-major">
+            <div class="accomplishment-major">
+              <span class="accomplishment-major-value">81.29%</span>
+              <span class="accomplishment-major-label">Train multilingual speech emotion recognition model accuracy (4-class) with CRNN + attention across 8 datasets (~25.8k samples)</span>
+            </div>
+            <div class="accomplishment-major">
+              <span class="accomplishment-major-value">1,100+</span>
+              <span class="accomplishment-major-label">Production tickets resolved as a Census IT Automation Engineer in a federal environment</span>
+            </div>
+            <div class="accomplishment-major">
+              <span class="accomplishment-major-value">End-to-end OSS</span>
+              <span class="accomplishment-major-label">Released a complete cost sensitive open-source iCloud E-Ink calendar system (code + build docs) in a space without reproducible open-source implementations</span>
+            </div>
+            <div class="accomplishment-major">
+              <span class="accomplishment-major-value">3,000+</span>
+              <span class="accomplishment-major-label">Devices supported; critical fixes deployed in &lt;1 hour and software adopted by U.S. Census Bureau staff</span>
+            </div>
+          </div>
+          <p class="metrics-filter-lede">Select a category to view impact statements.</p>
+          <div class="accomplishments-filters">
+            <button class="filter-chip" type="button" data-accomplishment-filter="all">
+              All
+            </button>
+            <button class="filter-chip" type="button" data-accomplishment-filter="python">
+              Python
+            </button>
+            <button class="filter-chip" type="button" data-accomplishment-filter="c++">
+              C++
+            </button>
+            <button class="filter-chip" type="button" data-accomplishment-filter="c">
+              C
+            </button>
+            <button class="filter-chip" type="button" data-accomplishment-filter="ml">
+              Machine Learning
+            </button>
+            <button class="filter-chip" type="button" data-accomplishment-filter="systems">
+              Systems
+            </button>
+            <button class="filter-chip" type="button" data-accomplishment-filter="production">
+              Production
+            </button>
+          </div>
+          <div class="accomplishments-summary" id="accomplishments-summary" style="display: none;">
+            <p class="accomplishments-summary-text"></p>
+          </div>
+          <div class="accomplishments-list">
+            <div class="accomplishment-group">
+              <h3 class="accomplishment-group-title">C++ &amp; graphics</h3>
+              <ul class="accomplishment-items">
+                <li class="accomplishment-item" data-tech="c++,systems">Custom raster graphics editor: full toolchain (7 tools), multi-layer RGBA, diff-based undo/redo, software alpha compositing.</li>
+                <li class="accomplishment-item" data-tech="c++,python,systems">Python C API bridge for image filters via NumPy (C++ host, extensible effects).</li>
+              </ul>
+            </div>
+            <div class="accomplishment-group">
+              <h3 class="accomplishment-group-title">Python, ML &amp; data</h3>
+              <ul class="accomplishment-items">
+                <li class="accomplishment-item" data-tech="python,ml,production">Multilingual speech emotion recognition: CRNN + attention across 8 datasets (~25.8k samples), 81.29% accuracy (4-class), cross-dataset evaluation and real-time inference.</li>
+                <li class="accomplishment-item" data-tech="python,ml">Secure distributed computation: privacy-preserving protocols (Oblivious Transfer, MPC) under adversarial threat models.</li>
+                <li class="accomplishment-item" data-tech="python,ml,systems">Autonomous robotics simulation: physics-based environment, sensor-motor control loops (PyBullet).</li>
+              </ul>
+            </div>
+            <div class="accomplishment-group">
+              <h3 class="accomplishment-group-title">Systems &amp; automation</h3>
+              <ul class="accomplishment-items">
+                <li class="accomplishment-item" data-tech="python,systems">E-Ink calendar: ICS + JSON merge, custom layout engine, iCloud/CalDAV integration, low-power refresh.</li>
+                <li class="accomplishment-item" data-tech="python,systems,production">MacOS GUI tool that compiles structured project data into site HTML; repeatable builds, fewer manual edits.</li>
+              </ul>
+            </div>
+            <div class="accomplishment-group">
+              <h3 class="accomplishment-group-title">Production</h3>
+              <ul class="accomplishment-items">
+                <li class="accomplishment-item" data-tech="python,systems,production">Software adopted by U.S. Census staff: 1,100+ tickets, 3,000+ devices, critical fixes in &lt;1 hour; 30+ hours/week saved in one workflow.</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </section>
+
       <section class="section">
         <div class="container">
           <div class="section-head">
-            <h2><a href="projects.html">Featured projects</a></h2>
+            <h2>Featured <a href="projects.html" class="text-link" style="margin-top: 0;">projects</a></h2>
             <p class="lede">
               Highlights from my recent work in ML systems, graphics, and IoT.
             </p>
           </div>
           <!-- FEATURED_PROJECTS:START -->
-          <div class="tile-grid">
+          <div class="tile-grid tile-grid--homepage">
             <article class="card project-card tile-card">
               <div class="tile-media">
             <div class="tile-slider is-simple" data-slider>
@@ -524,5 +608,68 @@
     ></script>
     <script type="module" src="assets/js/qa.js?v=20260215"></script>
     <script src="assets/js/projects.js?v=20260206" defer></script>
+    <script>
+      // Metrics: impact statement filters (none selected by default)
+      (function() {
+        const filterButtons = document.querySelectorAll('[data-accomplishment-filter]');
+        const accomplishmentItems = document.querySelectorAll('.accomplishment-item');
+        const accomplishmentGroups = document.querySelectorAll('.accomplishment-group');
+        const summaryEl = document.getElementById('accomplishments-summary');
+        const summaryTextEl = summaryEl?.querySelector('.accomplishments-summary-text');
+        let activeFilter = null;
+
+        const summaries = {
+          'python': 'Experienced using Python to rapidly develop extendable, maintainable, impactful applications.',
+          'c++': 'Experienced using C++ to extend existing software, develop new software, and deliver performant systems.',
+          'c': 'Growing experience using C to achieve optimal efficiency and control with software.',
+          'ml': 'Experience extending software with Machine Learning components, developing software using ML to deliver solutions, conducting research, and model development and training.',
+          'systems': 'Developed production-grade software used by U.S. Census staff, deployed hardware and robotic systems, and personal projects including this site.',
+          'production': 'Built and deployed production-grade systems used by federal staff, real-time ML inference pipelines, and reliable embedded hardware. Focus on reliability, scalability, and real-world impact.'
+        };
+
+        const updateFilter = () => {
+          const showAll = activeFilter === 'all';
+          const showNone = activeFilter === null;
+
+          accomplishmentItems.forEach((item) => {
+            const techs = (item.dataset.tech || '').split(',').map(t => t.trim());
+            const shouldShow = showAll || (!showNone && techs.includes(activeFilter));
+            item.classList.toggle('hidden', !shouldShow);
+          });
+
+          accomplishmentGroups.forEach((group) => {
+            const visible = group.querySelectorAll('.accomplishment-item:not(.hidden)').length;
+            group.classList.toggle('hidden', visible === 0);
+          });
+
+          if (summaryEl && summaryTextEl) {
+            if (showNone || showAll || !summaries[activeFilter]) {
+              summaryEl.style.display = 'none';
+            } else {
+              summaryTextEl.textContent = summaries[activeFilter];
+              summaryEl.style.display = 'block';
+            }
+          }
+        };
+
+        filterButtons.forEach((button) => {
+          button.addEventListener('click', () => {
+            const value = button.dataset.accomplishmentFilter || 'all';
+            const isCurrentlyActive = button.classList.contains('is-active');
+            if (isCurrentlyActive) {
+              activeFilter = null;
+              button.classList.remove('is-active');
+            } else {
+              activeFilter = value;
+              filterButtons.forEach((b) => b.classList.remove('is-active'));
+              button.classList.add('is-active');
+            }
+            updateFilter();
+          });
+        });
+
+        updateFilter();
+      })();
+    </script>
   </body>
 </html>
