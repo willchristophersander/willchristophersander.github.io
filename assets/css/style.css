@@ -942,6 +942,14 @@ a {
   gap: 0.75rem;
 }
 
+.qa-body {
+  display: none;
+}
+
+.qa-panel.qa-open .qa-body {
+  display: block;
+}
+
 .qa-header {
   display: flex;
   justify-content: space-between;

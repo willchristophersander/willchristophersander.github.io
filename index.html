@@ -54,45 +54,50 @@
 
       <section class="section muted">
         <div class="container">
-          <div class="card qa-panel">
+          <div class="card qa-panel qa-collapsed">
             <div class="qa-header">
               <h2>Frequently Asked Questions</h2>
               <div class="qa-header-actions">
+                <button class="button ghost qa-toggle" id="qa-toggle" type="button" aria-expanded="false">
+                  Open
+                </button>
                 <details class="qa-what">
                   <summary>What is this?</summary>
                   <p>Keyword-based retrieval system that finds relevant passages from resume context. No AI generation—answers come directly from provided information.</p>
                 </details>
               </div>
             </div>
-            <p class="qa-legacy-notice">Legacy model in use. More advanced trained version expected by February 17th 2026.</p>
-            <p class="muted-text qa-status" id="qa-status">Keyword-based retrieval from resume context. Disabled by default.</p>
-            <div class="qa-form-wrap">
-              <div class="qa-form-overlay" id="qa-form-overlay">
-                <div class="qa-overlay-initial" id="qa-overlay-initial">
-                  <button class="button" id="qa-enable" type="button">
-                    Enable
-                  </button>
-                </div>
-                <div class="qa-overlay-loading" id="qa-overlay-loading" hidden>
-                  <p class="qa-loading-label">Enabling search…</p>
-                  <div class="qa-progress-track" id="qa-progress-track" role="progressbar" aria-valuenow="0" aria-valuemin="0" aria-valuemax="100">
-                    <div class="qa-progress-fill" id="qa-progress-fill"></div>
+            <div class="qa-body">
+              <p class="qa-legacy-notice">Legacy model in use. More advanced trained version expected by February 17th 2026.</p>
+              <p class="muted-text qa-status" id="qa-status">Keyword-based retrieval from resume context. Disabled by default.</p>
+              <div class="qa-form-wrap">
+                <div class="qa-form-overlay" id="qa-form-overlay">
+                  <div class="qa-overlay-initial" id="qa-overlay-initial">
+                    <button class="button" id="qa-enable" type="button">
+                      Enable
+                    </button>
+                  </div>
+                  <div class="qa-overlay-loading" id="qa-overlay-loading" hidden>
+                    <p class="qa-loading-label">Enabling search…</p>
+                    <div class="qa-progress-track" id="qa-progress-track" role="progressbar" aria-valuenow="0" aria-valuemin="0" aria-valuemax="100">
+                      <div class="qa-progress-fill" id="qa-progress-fill"></div>
+                    </div>
                   </div>
                 </div>
+                <div class="qa-form">
+                  <input
+                    id="qa-question"
+                    type="text"
+                    placeholder="Example: What kind of teams is Will a good fit for?"
+                    disabled
+                  />
+                  <button class="button" id="qa-ask" type="button" disabled>
+                    Ask
+                  </button>
+                </div>
               </div>
-              <div class="qa-form">
-                <input
-                  id="qa-question"
-                  type="text"
-                  placeholder="Example: What kind of teams is Will a good fit for?"
-                  disabled
-                />
-                <button class="button" id="qa-ask" type="button" disabled>
-                  Ask
-                </button>
-              </div>
+              <div class="qa-output" id="qa-answer" aria-live="polite"></div>
             </div>
-            <div class="qa-output" id="qa-answer" aria-live="polite"></div>
           </div>
         </div>
       </section>
@@ -673,11 +678,32 @@
           });
         }
 
-        window.addEventListener('qa-loaded', function() {
-          if (loadTimeout) clearTimeout(loadTimeout);
-          if (loadingEl && !loadingEl.hidden) finishLoading();
-        });
-      })();
+          window.addEventListener('qa-loaded', function() {
+            if (loadTimeout) clearTimeout(loadTimeout);
+            if (loadingEl && !loadingEl.hidden) finishLoading();
+          });
+        })();
+
+        // FAQ section: collapse/expand panel
+        (function() {
+          const panel = document.querySelector('.qa-panel');
+          const toggle = document.getElementById('qa-toggle');
+          if (!panel || !toggle) return;
+
+          function update() {
+            const isOpen = panel.classList.contains('qa-open');
+            toggle.textContent = isOpen ? 'Close' : 'Open';
+            toggle.setAttribute('aria-expanded', isOpen ? 'true' : 'false');
+          }
+
+          toggle.addEventListener('click', function() {
+            panel.classList.toggle('qa-open');
+            update();
+          });
+
+          // Initialize state
+          update();
+        })();
     </script>
     <script>
       // Metrics: impact statement filters (none selected by default)
