@@ -110,10 +110,14 @@ sliders.forEach((slider) => {
 });
 
 const filterInput = document.getElementById("project-search");
-const filterChips = document.querySelectorAll(".filter-chip");
+const filterChips = document.querySelectorAll(".filter-chip[data-tag]");
+const statusChips = document.querySelectorAll(".filter-chip[data-status]");
+const sourceChips = document.querySelectorAll(".filter-chip[data-source]");
 const projectCards = document.querySelectorAll(".project-card");
 
 const activeFilters = new Set();
+let activeStatus = "all";
+let activeSource = "all";
 const normalizeText = (text) => text.toLowerCase().trim();
 
 const matchesFilters = (card) => {
@@ -122,13 +126,17 @@ const matchesFilters = (card) => {
   const tags = (card.dataset.tags || "")
     .split(",")
     .map((tag) => tag.trim());
+  const status = card.dataset.status || "completed";
+  const source = card.dataset.source || "closed-source";
 
   const queryMatch = !query || text.includes(query);
   const filterMatch =
     activeFilters.size === 0 ||
     Array.from(activeFilters).every((filter) => tags.includes(filter));
+  const statusMatch = activeStatus === "all" || status === activeStatus;
+  const sourceMatch = activeSource === "all" || source === activeSource;
 
-  return queryMatch && filterMatch;
+  return queryMatch && filterMatch && statusMatch && sourceMatch;
 };
 
 const updateFilters = () => {
@@ -162,6 +170,30 @@ filterChips.forEach((chip) => {
       chip.classList.add("is-active");
     }
 
+    updateFilters();
+  });
+});
+
+statusChips.forEach((chip) => {
+  chip.addEventListener("click", () => {
+    const status = chip.dataset.status;
+    if (!status) return;
+
+    activeStatus = status;
+    statusChips.forEach((c) => c.classList.remove("is-active"));
+    chip.classList.add("is-active");
+    updateFilters();
+  });
+});
+
+sourceChips.forEach((chip) => {
+  chip.addEventListener("click", () => {
+    const source = chip.dataset.source;
+    if (!source) return;
+
+    activeSource = source;
+    sourceChips.forEach((c) => c.classList.remove("is-active"));
+    chip.classList.add("is-active");
     updateFilters();
   });
 });

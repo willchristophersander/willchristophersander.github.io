@@ -1,0 +1,22 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="675" viewBox="0 0 1200 675">
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#dbeafe" />
+      <stop offset="100%" stop-color="#e2e8f0" />
+    </linearGradient>
+  </defs>
+  <rect width="1200" height="675" fill="url(#bg)" />
+  <circle cx="250" cy="515" r="68" fill="#1f2937" />
+  <circle cx="950" cy="515" r="68" fill="#1f2937" />
+  <rect x="170" y="300" width="860" height="165" rx="26" fill="#334155" />
+  <rect x="300" y="190" width="320" height="32" rx="16" fill="#0f172a" />
+  <rect x="590" y="150" width="45" height="150" rx="16" fill="#0f172a" />
+  <rect x="635" y="140" width="160" height="40" rx="14" fill="#2563eb" />
+  <circle cx="770" cy="160" r="16" fill="#93c5fd" />
+  <text x="600" y="90" text-anchor="middle" font-family="Arial, sans-serif" font-size="48" fill="#0f172a">
+    Cleaning Robot
+  </text>
+  <text x="600" y="130" text-anchor="middle" font-family="Arial, sans-serif" font-size="26" fill="#334155">
+    Stairs + Vertical Surface Prototype
+  </text>
+</svg>

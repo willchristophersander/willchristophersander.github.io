@@ -45,6 +45,24 @@
               autocomplete="off"
             />
           </div>
+          <div>
+            <span class="filter-label">Filter by status</span>
+            <div class="filter-tags" aria-label="Filter by status">
+              <button class="filter-chip is-active" type="button" data-status="all">All</button>
+              <button class="filter-chip" type="button" data-status="in-progress">In Progress</button>
+              <button class="filter-chip" type="button" data-status="completed">Completed</button>
+              <button class="filter-chip" type="button" data-status="paused">Paused</button>
+            </div>
+          </div>
+          <div>
+            <span class="filter-label">Source availability</span>
+            <div class="filter-tags" aria-label="Filter by source availability">
+              <button class="filter-chip is-active" type="button" data-source="all">All</button>
+              <button class="filter-chip" type="button" data-source="github-available">GitHub Available</button>
+              <button class="filter-chip" type="button" data-source="partially-open">Partially Open</button>
+              <button class="filter-chip" type="button" data-source="closed-source">Closed Source</button>
+            </div>
+          </div>
           <div class="filter-tags" aria-label="Filter by tag">
             <button class="filter-chip is-active" type="button" data-tag="all">All</button>
             <button class="filter-chip" type="button" data-tag="python">Python</button>
@@ -52,6 +70,7 @@
             <button class="filter-chip" type="button" data-tag="pytorch">PyTorch</button>
             <button class="filter-chip" type="button" data-tag="neural-network">Neural Network</button>
             <button class="filter-chip" type="button" data-tag="c++">C++</button>
+            <button class="filter-chip" type="button" data-tag="c">C</button>
             <button class="filter-chip" type="button" data-tag="opengl">OpenGL</button>
             <button class="filter-chip" type="button" data-tag="graphics">Graphics</button>
             <button class="filter-chip" type="button" data-tag="iot">IoT</button>
@@ -60,18 +79,23 @@
             <button class="filter-chip" type="button" data-tag="html">HTML</button>
             <button class="filter-chip" type="button" data-tag="gui">GUI</button>
             <button class="filter-chip" type="button" data-tag="macos">MacOS</button>
+            <button class="filter-chip" type="button" data-tag="github">GitHub</button>
+            <button class="filter-chip" type="button" data-tag="robotics">Robotics</button>
           </div>
         </div>
         <div class="container tile-grid">
           <article
             class="card project-card tile-card"
-            data-tags="python,machine-learning,pytorch,neural-network"
+            data-tags="python,machine-learning,pytorch,neural-network,github"
+            data-status="completed"
+            data-source="github-available"
           >
             <div class="tile-tags">
-              <span class="tile-tag">Python</span>
-              <span class="tile-tag">Machine Learning</span>
-              <span class="tile-tag">PyTorch</span>
-              <span class="tile-tag">Neural Network</span>
+              <span class="tile-tag" data-tag="python">Python</span>
+              <span class="tile-tag" data-tag="machine-learning">Machine Learning</span>
+              <span class="tile-tag" data-tag="pytorch">PyTorch</span>
+              <span class="tile-tag" data-tag="neural-network">Neural Network</span>
+              <span class="tile-tag" data-tag="github">GitHub</span>
             </div>
             <div class="tile-media">
             <div class="tile-slider is-simple" data-slider>
@@ -104,12 +128,56 @@
 
           <article
             class="card project-card tile-card"
-            data-tags="c++,opengl,graphics"
+            data-tags="python,c,iot,hardware,robotics"
+            data-status="in-progress"
+            data-source="closed-source"
           >
             <div class="tile-tags">
-              <span class="tile-tag">C++</span>
-              <span class="tile-tag">OpenGL</span>
-              <span class="tile-tag">Graphics</span>
+              <span class="tile-tag" data-tag="python">Python</span>
+              <span class="tile-tag" data-tag="c">C</span>
+              <span class="tile-tag" data-tag="iot">IoT</span>
+              <span class="tile-tag" data-tag="hardware">Hardware</span>
+              <span class="tile-tag" data-tag="robotics">Robotics</span>
+            </div>
+            <div class="tile-media">
+            <div class="tile-slider is-simple" data-slider>
+              <div class="tile-slides" data-slider-track>
+                <img class="tile-slide is-active" src="Projects/RobotVacuumPlumbing/Screenshot_2026-02-12_at_8.47.52_PM-c675f3a6-494f-4c83-ac18-4ae2e1b368c9.png" alt="Robot vacuum plumbing automation prototype with labeled ports" />
+              </div>
+            </div>
+            </div>
+            <div class="tile-body">
+              <div class="tile-header">
+                <h2>Robot Vacuum & Plumbing Automation</h2>
+                <p class="muted-text">Personal Project · Home Automation</p>
+              </div>
+              <p class="tile-summary">Low-cost Dreame X30 Ultra automation for water plumbing and central-vacuum dust handling, with Python control being rewritten in C for efficiency.</p>
+              <ul class="tile-bullets">
+                <li>Automates gray-water handling with periodic clean-water flushing</li>
+                <li>Uses base-pressure sensing signal to trigger pump control</li>
+                <li>Designed for lower cost and better long-term reliability than common kits</li>
+              </ul>
+              <button
+                class="text-link tile-action"
+                type="button"
+                data-modal-open="project-robotVacuumPlumbing"
+              >
+                View details
+              </button>
+            </div>
+          </article>
+
+          <article
+            class="card project-card tile-card"
+            data-tags="c++,opengl,graphics,github"
+            data-status="completed"
+            data-source="github-available"
+          >
+            <div class="tile-tags">
+              <span class="tile-tag" data-tag="c++">C++</span>
+              <span class="tile-tag" data-tag="opengl">OpenGL</span>
+              <span class="tile-tag" data-tag="graphics">Graphics</span>
+              <span class="tile-tag" data-tag="github">GitHub</span>
             </div>
             <div class="tile-media">
             <div class="tile-slider is-simple" data-slider>
@@ -141,14 +209,17 @@
 
           <article
             class="card project-card tile-card"
-            data-tags="python,graphics,iot,hardware,gui"
+            data-tags="python,graphics,iot,hardware,gui,github"
+            data-status="completed"
+            data-source="github-available"
           >
             <div class="tile-tags">
-              <span class="tile-tag">Python</span>
-              <span class="tile-tag">Graphics</span>
-              <span class="tile-tag">IoT</span>
-              <span class="tile-tag">Hardware</span>
-              <span class="tile-tag">GUI</span>
+              <span class="tile-tag" data-tag="python">Python</span>
+              <span class="tile-tag" data-tag="graphics">Graphics</span>
+              <span class="tile-tag" data-tag="iot">IoT</span>
+              <span class="tile-tag" data-tag="hardware">Hardware</span>
+              <span class="tile-tag" data-tag="gui">GUI</span>
+              <span class="tile-tag" data-tag="github">GitHub</span>
             </div>
             <div class="tile-media">
             <div class="tile-slider is-simple" data-slider>
@@ -179,13 +250,16 @@
 
           <article
             class="card project-card tile-card"
-            data-tags="python,html,gui,macos"
+            data-tags="python,html,gui,macos,github"
+            data-status="completed"
+            data-source="github-available"
           >
             <div class="tile-tags">
-              <span class="tile-tag">Python</span>
-              <span class="tile-tag">HTML</span>
-              <span class="tile-tag">GUI</span>
-              <span class="tile-tag">MacOS</span>
+              <span class="tile-tag" data-tag="python">Python</span>
+              <span class="tile-tag" data-tag="html">HTML</span>
+              <span class="tile-tag" data-tag="gui">GUI</span>
+              <span class="tile-tag" data-tag="macos">MacOS</span>
+              <span class="tile-tag" data-tag="github">GitHub</span>
             </div>
             <div class="tile-media">
             <div class="tile-slider is-simple" data-slider>
@@ -209,6 +283,86 @@
                 class="text-link tile-action"
                 type="button"
                 data-modal-open="project-projectManager"
+              >
+                View details
+              </button>
+            </div>
+          </article>
+
+          <article
+            class="card project-card tile-card"
+            data-tags="python,machine-learning,hardware,robotics"
+            data-status="in-progress"
+            data-source="closed-source"
+          >
+            <div class="tile-tags">
+              <span class="tile-tag" data-tag="python">Python</span>
+              <span class="tile-tag" data-tag="machine-learning">Machine Learning</span>
+              <span class="tile-tag" data-tag="hardware">Hardware</span>
+              <span class="tile-tag" data-tag="robotics">Robotics</span>
+            </div>
+            <div class="tile-media">
+            <div class="tile-slider is-simple" data-slider>
+              <div class="tile-slides" data-slider-track>
+                <img class="tile-slide is-active" src="Projects/CleaningRobot/cleaning-robot-placeholder.svg" alt="Cleaning Robot project placeholder image" />
+              </div>
+            </div>
+            </div>
+            <div class="tile-body">
+              <div class="tile-header">
+                <h2>Cleaning Robot (Stairs and Vertical Surfaces)</h2>
+                <p class="muted-text">Personal Project · Robotics</p>
+              </div>
+              <p class="tile-summary">AI-guided cleaning robot with arm-mounted vacuum nozzle for stairs and vertical surfaces.</p>
+              <ul class="tile-bullets">
+                <li>AI-based navigation and movement planning</li>
+                <li>Targets stairs, cabinets, walls, and heat registers</li>
+                <li>Stair-climbing is under active safety-focused iteration</li>
+              </ul>
+              <button
+                class="text-link tile-action"
+                type="button"
+                data-modal-open="project-cleaningRobot"
+              >
+                View details
+              </button>
+            </div>
+          </article>
+
+          <article
+            class="card project-card tile-card"
+            data-tags="python,machine-learning,neural-network,robotics"
+            data-status="in-progress"
+            data-source="closed-source"
+          >
+            <div class="tile-tags">
+              <span class="tile-tag" data-tag="python">Python</span>
+              <span class="tile-tag" data-tag="machine-learning">Machine Learning</span>
+              <span class="tile-tag" data-tag="neural-network">Neural Network</span>
+              <span class="tile-tag" data-tag="robotics">Robotics</span>
+            </div>
+            <div class="tile-media">
+            <div class="tile-slider is-simple" data-slider>
+              <div class="tile-slides" data-slider-track>
+                <img class="tile-slide is-active" src="Projects/EvolutionaryRobotics/evolutionary-robotics-placeholder.svg" alt="Evolutionary robotics cumulative project placeholder image" />
+              </div>
+            </div>
+            </div>
+            <div class="tile-body">
+              <div class="tile-header">
+                <h2>Evolutionary Robotics Cumulative Project</h2>
+                <p class="muted-text">UVM · CS3060 Evolutionary Robotics</p>
+              </div>
+              <p class="tile-summary">Cumulative project using PyBullet, evolutionary methods, and neural-network robotics experiments in CS3060.</p>
+              <ul class="tile-bullets">
+                <li>Designed and tested robot controllers in simulation</li>
+                <li>Applied evolutionary algorithms to improve behavior over iterations</li>
+                <li>Integrated weekly assignments into a single end-to-end project system</li>
+              </ul>
+              <button
+                class="text-link tile-action"
+                type="button"
+                data-modal-open="project-evolutionaryRoboticsProject"
               >
                 View details
               </button>
@@ -275,6 +429,56 @@
               </p>
             </object>
           </div>
+        </div>
+      </div>
+
+      <div class="modal" id="project-robotVacuumPlumbing" aria-hidden="true" role="dialog">
+        <div class="modal-backdrop" data-modal-close></div>
+        <div class="modal-content" role="document">
+          <button class="modal-close" type="button" data-modal-close>
+            Close
+          </button>
+            <div class="tile-slider modal-slider" data-slider>
+                          <button
+              class="tile-arrow tile-arrow--left"
+              type="button"
+              aria-label="Previous image"
+              data-slider-prev
+            >
+              ‹
+            </button>
+            <button
+              class="tile-arrow tile-arrow--right"
+              type="button"
+              aria-label="Next image"
+              data-slider-next
+            >
+              ›
+            </button>
+<div class="tile-slides" data-slider-track>
+                <img class="tile-slide is-active" src="Projects/RobotVacuumPlumbing/Screenshot_2026-02-12_at_8.47.52_PM-c675f3a6-494f-4c83-ac18-4ae2e1b368c9.png" alt="Robot vacuum plumbing automation prototype with labeled ports" />
+                <img class="tile-slide" src="Projects/RobotVacuumPlumbing/Screenshot_2026-02-12_at_8.48.19_PM-6b0c9db5-af43-4d40-a2a1-10e5148d3b8e.png" alt="Plumbing automation prototype enclosure and tubing setup" />
+                <img class="tile-slide" src="Projects/RobotVacuumPlumbing/Screenshot_2026-02-12_at_8.48.08_PM-fc00a305-903c-4e9c-a721-c58c1ec6dc51.png" alt="3D printed TPU fitting on robot vacuum plumbing port" />
+                <img class="tile-slide" src="Projects/RobotVacuumPlumbing/Screenshot_2026-02-12_at_8.48.29_PM-6e883724-97bd-410b-843a-08b5ba1a2f53.png" alt="Pump and control box used in the plumbing automation system" />
+              </div>
+            </div>
+          <h2>Robot Vacuum & Plumbing Automation</h2>
+          <p class="muted-text">Personal Project · Home Automation</p>
+          <p>
+            In Progress automation for my family’s X30 Ultra focused on both plumbing and central-vacuum dust handling, using a Raspberry Pi, custom programming, 3D printed TPU parts, and online-sourced pumps. In parallel, I am developing central-vacuum integration for the base dustbin using 3D printed interfaces, automated gates, and a custom Dreame-compatible dustbin design. The goal is to replace failure-prone cheap pump kits with a system that better handles gray water and automatically performs periodic clean-water flushing to maintain pump health. The current system works, and I am actively rewriting parts of the working Python control code into C for better efficiency while continuing safety and reliability iteration. The system also automatically refills clean water for both the robot and base. Because the X30 Ultra base automatically doses detergent, the mopping workflow is largely hands-off aside from refilling detergent every few months and occasional baseboard cleaning.
+          </p>
+          <ul class="list compact">
+            <li>Integrates pressure-sensing hardware from China to detect dock dump requests</li>
+            <li>Automatically turns on pumping when the robot base requests a water dump</li>
+            <li>Current system works while ongoing iterations focus on reliability and safety</li>
+            <li>Includes teardown-driven research on Dreame X30 base behavior and validation testing</li>
+            <li>Covers TPU print prototyping, plumbing research, Chinese translation/navigation for sourcing, and custom part selection</li>
+            <li>Actively developing central-vacuum dust handling via 3D printed parts, automated gates, and a custom Dreame-compatible dustbin</li>
+          </ul>
+          <div class="modal-links">
+          
+          </div>
+
         </div>
       </div>
 
@@ -390,6 +594,80 @@
           </ul>
           <div class="modal-links">
           
+          </div>
+
+        </div>
+      </div>
+
+      <div class="modal" id="project-cleaningRobot" aria-hidden="true" role="dialog">
+        <div class="modal-backdrop" data-modal-close></div>
+        <div class="modal-content" role="document">
+          <button class="modal-close" type="button" data-modal-close>
+            Close
+          </button>
+            <div class="tile-slider modal-slider" data-slider>
+              <div class="tile-slides" data-slider-track>
+                <img class="tile-slide is-active" src="Projects/CleaningRobot/cleaning-robot-placeholder.svg" alt="Cleaning Robot project placeholder image" />
+              </div>
+            </div>
+          <h2>Cleaning Robot (Stairs and Vertical Surfaces)</h2>
+          <p class="muted-text">Personal Project · Robotics</p>
+          <p>
+            In Progress robotic cleaning platform that uses AI for navigation and movement. The current design uses a robotic arm with a vacuum nozzle to clean stairs and vertical surfaces such as cabinets, walls, and heat registers.
+          </p>
+          <ul class="list compact">
+            <li>AI-assisted motion and path planning</li>
+            <li>Arm-mounted vacuum nozzle for targeted cleaning</li>
+            <li>Stair climbing is being tested and iterated with strong safety constraints</li>
+          </ul>
+          <div class="modal-links">
+          
+          </div>
+
+        </div>
+      </div>
+
+      <div class="modal" id="project-evolutionaryRoboticsProject" aria-hidden="true" role="dialog">
+        <div class="modal-backdrop" data-modal-close></div>
+        <div class="modal-content" role="document">
+          <button class="modal-close" type="button" data-modal-close>
+            Close
+          </button>
+            <div class="tile-slider modal-slider" data-slider>
+                          <button
+              class="tile-arrow tile-arrow--left"
+              type="button"
+              aria-label="Previous image"
+              data-slider-prev
+            >
+              ‹
+            </button>
+            <button
+              class="tile-arrow tile-arrow--right"
+              type="button"
+              aria-label="Next image"
+              data-slider-next
+            >
+              ›
+            </button>
+<div class="tile-slides" data-slider-track>
+                <iframe class="tile-slide is-active" src="https://www.youtube.com/embed/dfkDlqjd7_w" title="PyBullet development video" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                <img class="tile-slide" src="Projects/EvolutionaryRobotics/evolutionary-robotics-placeholder.svg" alt="Evolutionary robotics cumulative project placeholder image" />
+              </div>
+            </div>
+          <h2>Evolutionary Robotics Cumulative Project</h2>
+          <p class="muted-text">UVM · CS3060 Evolutionary Robotics</p>
+          <p>
+            Cumulative course project developed in CS3060 under Joshua Bongard, a highly respected researcher in evolutionary robotics. The project used PyBullet to build a simulation-based evolutionary robotics workflow and combined weekly deliverables into a full experiment system involving neural-network and robotics components. As summarized by the course: Over the final four weeks of the semester, each student used their software system to perform an evolutionary robotics experiment, submitted weekly deliverables, handed in a written report, and gave an oral presentation during the exam period.
+          </p>
+          <ul class="list compact">
+            <li>Implemented an iterative software pipeline for evolutionary robotics experiments</li>
+            <li>Used simulation outputs to compare robot designs and controller performance</li>
+            <li>Delivered a final integrated project with experiment results and presentation artifacts</li>
+            <li>Development progress video shows PyBullet-based experimentation</li>
+          </ul>
+          <div class="modal-links">
+          <a class="text-link" href="https://youtu.be/dfkDlqjd7_w">Development video (PyBullet)</a>
           </div>
 
         </div>

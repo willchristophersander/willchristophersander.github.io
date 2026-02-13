@@ -21,6 +21,10 @@
       "label": "C++"
     },
     {
+      "id": "c",
+      "label": "C"
+    },
+    {
       "id": "opengl",
       "label": "OpenGL"
     },
@@ -51,6 +55,14 @@
     {
       "id": "macos",
       "label": "MacOS"
+    },
+    {
+      "id": "github",
+      "label": "GitHub"
+    },
+    {
+      "id": "robotics",
+      "label": "Robotics"
     }
   ],
   "featured": [
@@ -63,18 +75,21 @@
     {
       "id": "crnn",
       "title": "AI Speech Emotion Recognition System",
-      "subtitle": "UVM · Advanced Machine Learning",
+      "subtitle": "UVM \u00b7 Advanced Machine Learning",
       "summary": "CRNN + attention for multilingual SER.",
       "bullets": [
         "81.29% accuracy / 83.63% F1",
-        "10–20ms real-time inference"
+        "10\u201320ms real-time inference"
       ],
       "tags": [
         "python",
         "machine-learning",
         "pytorch",
-        "neural-network"
+        "neural-network",
+        "github"
       ],
+      "status": "completed",
+      "sourceStatus": "github-available",
       "tileItems": [
         {
           "type": "image",
@@ -96,11 +111,11 @@
       ],
       "modal": {
         "title": "AI Speech Emotion Recognition System",
-        "subtitle": "UVM · Advanced Machine Learning",
+        "subtitle": "UVM \u00b7 Advanced Machine Learning",
         "body": "Built a CRNN architecture (CNN + BiLSTM + Attention) for multilingual speech emotion recognition across eight datasets. Designed the training pipeline, evaluation, and interpretability tools, then deployed real-time inference with Flask.",
         "bullets": [
           "81.29% accuracy / 83.63% F1 (4-class) and 76.76% accuracy / 82.80% F1 (6-class)",
-          "Distance-weighted loss using arousal–valence theory and multilingual training",
+          "Distance-weighted loss using arousal\u2013valence theory and multilingual training",
           "PyTorch, Python, Flask, Grad-CAM, attention maps"
         ],
         "links": [
@@ -146,19 +161,98 @@
       ]
     },
     {
+      "id": "robotVacuumPlumbing",
+      "title": "Robot Vacuum & Plumbing Automation",
+      "subtitle": "Personal Project \u00b7 Home Automation",
+      "summary": "Low-cost Dreame X30 Ultra automation for water plumbing and central-vacuum dust handling, with Python control being rewritten in C for efficiency.",
+      "bullets": [
+        "Automates gray-water handling with periodic clean-water flushing",
+        "Uses base-pressure sensing signal to trigger pump control",
+        "Designed for lower cost and better long-term reliability than common kits"
+      ],
+      "tags": [
+        "python",
+        "c",
+        "iot",
+        "hardware",
+        "robotics"
+      ],
+      "status": "in-progress",
+      "sourceStatus": "closed-source",
+      "tileItems": [
+        {
+          "type": "image",
+          "src": "Projects/RobotVacuumPlumbing/Screenshot_2026-02-12_at_8.47.52_PM-c675f3a6-494f-4c83-ac18-4ae2e1b368c9.png"
+        }
+      ],
+      "tileAlts": [
+        "Robot vacuum plumbing automation prototype with labeled ports"
+      ],
+      "tileTitles": [
+        ""
+      ],
+      "modal": {
+        "title": "Robot Vacuum & Plumbing Automation",
+        "subtitle": "Personal Project \u00b7 Home Automation",
+        "body": "In Progress automation for my family\u2019s X30 Ultra focused on both plumbing and central-vacuum dust handling, using a Raspberry Pi, custom programming, 3D printed TPU parts, and online-sourced pumps. In parallel, I am developing central-vacuum integration for the base dustbin using 3D printed interfaces, automated gates, and a custom Dreame-compatible dustbin design. The goal is to replace failure-prone cheap pump kits with a system that better handles gray water and automatically performs periodic clean-water flushing to maintain pump health. The current system works, and I am actively rewriting parts of the working Python control code into C for better efficiency while continuing safety and reliability iteration. The system also automatically refills clean water for both the robot and base. Because the X30 Ultra base automatically doses detergent, the mopping workflow is largely hands-off aside from refilling detergent every few months and occasional baseboard cleaning.",
+        "bullets": [
+          "Integrates pressure-sensing hardware from China to detect dock dump requests",
+          "Automatically turns on pumping when the robot base requests a water dump",
+          "Current system works while ongoing iterations focus on reliability and safety",
+          "Includes teardown-driven research on Dreame X30 base behavior and validation testing",
+          "Covers TPU print prototyping, plumbing research, Chinese translation/navigation for sourcing, and custom part selection",
+          "Actively developing central-vacuum dust handling via 3D printed parts, automated gates, and a custom Dreame-compatible dustbin"
+        ],
+        "links": [],
+        "sliderItems": [
+          {
+            "type": "image",
+            "src": "Projects/RobotVacuumPlumbing/Screenshot_2026-02-12_at_8.47.52_PM-c675f3a6-494f-4c83-ac18-4ae2e1b368c9.png"
+          },
+          {
+            "type": "image",
+            "src": "Projects/RobotVacuumPlumbing/Screenshot_2026-02-12_at_8.48.19_PM-6b0c9db5-af43-4d40-a2a1-10e5148d3b8e.png"
+          },
+          {
+            "type": "image",
+            "src": "Projects/RobotVacuumPlumbing/Screenshot_2026-02-12_at_8.48.08_PM-fc00a305-903c-4e9c-a721-c58c1ec6dc51.png"
+          },
+          {
+            "type": "image",
+            "src": "Projects/RobotVacuumPlumbing/Screenshot_2026-02-12_at_8.48.29_PM-6e883724-97bd-410b-843a-08b5ba1a2f53.png"
+          }
+        ],
+        "sliderAlts": [
+          "Robot vacuum plumbing automation prototype with labeled ports",
+          "Plumbing automation prototype enclosure and tubing setup",
+          "3D printed TPU fitting on robot vacuum plumbing port",
+          "Pump and control box used in the plumbing automation system"
+        ],
+        "sliderTitles": [
+          "",
+          "",
+          "",
+          ""
+        ]
+      }
+    },
+    {
       "id": "canvas",
       "title": "C++ Canvas Raster Graphics Editor",
-      "subtitle": "UVM · Advanced Programming",
+      "subtitle": "UVM \u00b7 Advanced Programming",
       "summary": "Real-time raster editor with layered buffers.",
       "bullets": [
         "7 tools + diff-based undo/redo",
-        "Lazy CPU→GPU texture updates"
+        "Lazy CPU\u2192GPU texture updates"
       ],
       "tags": [
         "c++",
         "opengl",
-        "graphics"
+        "graphics",
+        "github"
       ],
+      "status": "completed",
+      "sourceStatus": "github-available",
       "tileItems": [
         {
           "type": "video",
@@ -166,7 +260,7 @@
         },
         {
           "type": "image",
-          "src": "Projects/Canvas/Screenshot 2026-02-06 at 8.57.05 PM.png"
+          "src": "Projects/Canvas/Screenshot 2026-02-06 at 8.57.05\u202fPM.png"
         }
       ],
       "tileTitles": [
@@ -179,10 +273,10 @@
       ],
       "modal": {
         "title": "C++ Canvas Raster Graphics Editor",
-        "subtitle": "UVM · Advanced Programming",
+        "subtitle": "UVM \u00b7 Advanced Programming",
         "body": "Built a real-time raster graphics engine with seven tools, multi-layer RGBA buffers, and diff-based undo/redo. Implemented OpenGL rendering with lazy texture updates and software blending, plus image filters via Python C API + NumPy.",
         "bullets": [
-          "60 FPS at 800×600 with lazy CPU→GPU texture updates",
+          "60 FPS at 800\u00d7600 with lazy CPU\u2192GPU texture updates",
           "Custom rasterization and per-pixel alpha compositing",
           "C++, OpenGL, ImGui, Python C API, NumPy"
         ],
@@ -203,7 +297,7 @@
           },
           {
             "type": "image",
-            "src": "Projects/Canvas/Screenshot 2026-02-06 at 8.57.05 PM.png"
+            "src": "Projects/Canvas/Screenshot 2026-02-06 at 8.57.05\u202fPM.png"
           }
         ],
         "sliderTitles": [
@@ -219,7 +313,7 @@
     {
       "id": "eink",
       "title": "E-Ink iCloud Calendar Display",
-      "subtitle": "IoT · Product build",
+      "subtitle": "IoT \u00b7 Product build",
       "summary": "Modular E-Ink calendar integrating iCloud.",
       "bullets": [
         "Unified ICS + JSON event pipeline",
@@ -230,8 +324,11 @@
         "graphics",
         "iot",
         "hardware",
-        "gui"
+        "gui",
+        "github"
       ],
+      "status": "completed",
+      "sourceStatus": "github-available",
       "tileItems": [
         {
           "type": "image",
@@ -243,7 +340,7 @@
       ],
       "modal": {
         "title": "E-Ink iCloud Calendar Display",
-        "subtitle": "IoT · Product build",
+        "subtitle": "IoT \u00b7 Product build",
         "body": "Developed an IoT E-Ink display calendar integrating iCloud and public holiday APIs. Built a modular, object-oriented software architecture and custom layout engine with competitive materials cost.",
         "bullets": [
           "Merged ICS and JSON events into a single display pipeline",
@@ -276,19 +373,22 @@
     {
       "id": "projectManager",
       "title": "Website Project Manager",
-      "subtitle": "William Sander · Personal Project",
+      "subtitle": "William Sander \u00b7 Personal Project",
       "summary": "MacOS GUI program that uses Python to convert user inputs into HTML code dynamically, compiling final output for this website.",
       "bullets": [],
       "tags": [
         "python",
         "html",
         "gui",
-        "macos"
+        "macos",
+        "github"
       ],
+      "status": "completed",
+      "sourceStatus": "github-available",
       "tileItems": [
         {
           "type": "image",
-          "src": "Projects/projectManager/Screenshot 2026-02-06 at 10.03.15 PM.png"
+          "src": "Projects/projectManager/Screenshot 2026-02-06 at 10.03.15\u202fPM.png"
         },
         {
           "type": "video",
@@ -296,7 +396,7 @@
         },
         {
           "type": "image",
-          "src": "Projects/projectManager/Screenshot 2026-02-06 at 8.47.25 PM.png"
+          "src": "Projects/projectManager/Screenshot 2026-02-06 at 8.47.25\u202fPM.png"
         }
       ],
       "tileAlts": [
@@ -318,11 +418,11 @@
         "sliderItems": [
           {
             "type": "image",
-            "src": "Projects/projectManager/Screenshot 2026-02-06 at 10.03.15 PM.png"
+            "src": "Projects/projectManager/Screenshot 2026-02-06 at 10.03.15\u202fPM.png"
           },
           {
             "type": "image",
-            "src": "Projects/projectManager/Screenshot 2026-02-06 at 8.47.25 PM.png"
+            "src": "Projects/projectManager/Screenshot 2026-02-06 at 8.47.25\u202fPM.png"
           }
         ],
         "sliderAlts": [
@@ -331,6 +431,126 @@
         ],
         "sliderTitles": [
           "",
+          ""
+        ]
+      }
+    },
+    {
+      "id": "cleaningRobot",
+      "title": "Cleaning Robot (Stairs and Vertical Surfaces)",
+      "subtitle": "Personal Project \u00b7 Robotics",
+      "summary": "AI-guided cleaning robot with arm-mounted vacuum nozzle for stairs and vertical surfaces.",
+      "bullets": [
+        "AI-based navigation and movement planning",
+        "Targets stairs, cabinets, walls, and heat registers",
+        "Stair-climbing is under active safety-focused iteration"
+      ],
+      "tags": [
+        "python",
+        "machine-learning",
+        "hardware",
+        "robotics"
+      ],
+      "status": "in-progress",
+      "sourceStatus": "closed-source",
+      "tileItems": [
+        {
+          "type": "image",
+          "src": "Projects/CleaningRobot/cleaning-robot-placeholder.svg"
+        }
+      ],
+      "tileAlts": [
+        "Cleaning Robot project placeholder image"
+      ],
+      "tileTitles": [
+        ""
+      ],
+      "modal": {
+        "title": "Cleaning Robot (Stairs and Vertical Surfaces)",
+        "subtitle": "Personal Project \u00b7 Robotics",
+        "body": "In Progress robotic cleaning platform that uses AI for navigation and movement. The current design uses a robotic arm with a vacuum nozzle to clean stairs and vertical surfaces such as cabinets, walls, and heat registers.",
+        "bullets": [
+          "AI-assisted motion and path planning",
+          "Arm-mounted vacuum nozzle for targeted cleaning",
+          "Stair climbing is being tested and iterated with strong safety constraints"
+        ],
+        "links": [],
+        "sliderItems": [
+          {
+            "type": "image",
+            "src": "Projects/CleaningRobot/cleaning-robot-placeholder.svg"
+          }
+        ],
+        "sliderAlts": [
+          "Cleaning Robot project placeholder image"
+        ],
+        "sliderTitles": [
+          ""
+        ]
+      }
+    },
+    {
+      "id": "evolutionaryRoboticsProject",
+      "title": "Evolutionary Robotics Cumulative Project",
+      "subtitle": "UVM · CS3060 Evolutionary Robotics",
+      "summary": "Cumulative project using PyBullet, evolutionary methods, and neural-network robotics experiments in CS3060.",
+      "bullets": [
+        "Designed and tested robot controllers in simulation",
+        "Applied evolutionary algorithms to improve behavior over iterations",
+        "Integrated weekly assignments into a single end-to-end project system"
+      ],
+      "tags": [
+        "python",
+        "machine-learning",
+        "neural-network",
+        "robotics"
+      ],
+      "status": "in-progress",
+      "sourceStatus": "closed-source",
+      "tileItems": [
+        {
+          "type": "image",
+          "src": "Projects/EvolutionaryRobotics/evolutionary-robotics-placeholder.svg"
+        }
+      ],
+      "tileAlts": [
+        "Evolutionary robotics cumulative project placeholder image"
+      ],
+      "tileTitles": [
+        ""
+      ],
+      "modal": {
+        "title": "Evolutionary Robotics Cumulative Project",
+        "subtitle": "UVM · CS3060 Evolutionary Robotics",
+        "body": "Cumulative course project developed in CS3060 under Joshua Bongard, a highly respected researcher in evolutionary robotics. The project used PyBullet to build a simulation-based evolutionary robotics workflow and combined weekly deliverables into a full experiment system involving neural-network and robotics components. As summarized by the course: Over the final four weeks of the semester, each student used their software system to perform an evolutionary robotics experiment, submitted weekly deliverables, handed in a written report, and gave an oral presentation during the exam period.",
+        "bullets": [
+          "Implemented an iterative software pipeline for evolutionary robotics experiments",
+          "Used simulation outputs to compare robot designs and controller performance",
+          "Delivered a final integrated project with experiment results and presentation artifacts",
+          "Development progress video shows PyBullet-based experimentation"
+        ],
+        "links": [
+          {
+            "label": "Development video (PyBullet)",
+            "href": "https://youtu.be/dfkDlqjd7_w"
+          }
+        ],
+        "sliderItems": [
+          {
+            "type": "video",
+            "src": "https://www.youtube.com/embed/dfkDlqjd7_w"
+          },
+          {
+            "type": "image",
+            "src": "Projects/EvolutionaryRobotics/evolutionary-robotics-placeholder.svg"
+          }
+        ],
+        "sliderAlts": [
+          "",
+          "Evolutionary robotics cumulative project placeholder image"
+        ],
+        "sliderTitles": [
+          "PyBullet development video",
           ""
         ]
       }
