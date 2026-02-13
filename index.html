@@ -34,9 +34,9 @@
             <h1>Pragmatic engineering with production focus.</h1>
             <p class="lede">
               Computer Science graduate (B.S. May 2026) targeting Software
-              Engineering and Machine Learning roles. Experienced in building
-              production-grade automation and systems using Python, C, C++, and
-              SQL alongside applied ML work.
+              Engineering and Machine Learning roles. Production experience at the
+              U.S. Census Bureau; experienced in building automation and systems
+              using Python, C, C++, and SQL alongside applied ML work.
             </p>
             <div class="cta-row">
               <a class="button" href="projects.html">View projects</a>
@@ -56,32 +56,41 @@
         <div class="container">
           <div class="card qa-panel">
             <div class="qa-header">
-              <div>
-                <h2>Frequently Asked Questions</h2>
-                <p class="lede">
-                  Optional on-device ML-assisted query that runs locally in your
-                  browser. It is intentionally lightweight, so answers may be less
-                  accurate than larger cloud-hosted models.
-                </p>
+              <h2>Frequently Asked Questions</h2>
+              <div class="qa-header-actions">
+                <details class="qa-what">
+                  <summary>What is this?</summary>
+                  <p>Keyword-based retrieval system that finds relevant passages from resume context. No AI generation—answers come directly from provided information.</p>
+                </details>
               </div>
-              <button class="button ghost" id="qa-enable" type="button">
-                Enable AI
-              </button>
             </div>
-            <p class="muted-text qa-status" id="qa-status">
-              Disabled. Enable to run a lightweight local FAQ model in your
-              browser.
-            </p>
-            <div class="qa-form">
-              <input
-                id="qa-question"
-                type="text"
-                placeholder="Example: What kind of teams is Will a good fit for?"
-                disabled
-              />
-              <button class="button" id="qa-ask" type="button" disabled>
-                Ask
-              </button>
+            <p class="qa-legacy-notice">Legacy model in use. More advanced trained version expected by February 17th 2026.</p>
+            <p class="muted-text qa-status" id="qa-status">Keyword-based retrieval from resume context. Disabled by default.</p>
+            <div class="qa-form-wrap">
+              <div class="qa-form-overlay" id="qa-form-overlay">
+                <div class="qa-overlay-initial" id="qa-overlay-initial">
+                  <button class="button" id="qa-enable" type="button">
+                    Enable
+                  </button>
+                </div>
+                <div class="qa-overlay-loading" id="qa-overlay-loading" hidden>
+                  <p class="qa-loading-label">Enabling search…</p>
+                  <div class="qa-progress-track" id="qa-progress-track" role="progressbar" aria-valuenow="0" aria-valuemin="0" aria-valuemax="100">
+                    <div class="qa-progress-fill" id="qa-progress-fill"></div>
+                  </div>
+                </div>
+              </div>
+              <div class="qa-form">
+                <input
+                  id="qa-question"
+                  type="text"
+                  placeholder="Example: What kind of teams is Will a good fit for?"
+                  disabled
+                />
+                <button class="button" id="qa-ask" type="button" disabled>
+                  Ask
+                </button>
+              </div>
             </div>
             <div class="qa-output" id="qa-answer" aria-live="polite"></div>
           </div>
@@ -124,7 +133,7 @@
           <div class="accomplishments-major">
             <div class="accomplishment-major">
               <span class="accomplishment-major-value">81.29%</span>
-              <span class="accomplishment-major-label">Train multilingual speech emotion recognition model accuracy (4-class) with CRNN + attention across 8 datasets (~25.8k samples)</span>
+              <span class="accomplishment-major-label">Trained a multilingual speech emotion recognition model (4-class) using CRNN + attention across 8 datasets (~25.8k samples), with cross-dataset evaluation and real-time inference.</span>
             </div>
             <div class="accomplishment-major">
               <span class="accomplishment-major-value">1,100+</span>
@@ -132,11 +141,11 @@
             </div>
             <div class="accomplishment-major">
               <span class="accomplishment-major-value">End-to-end OSS</span>
-              <span class="accomplishment-major-label">Released a complete cost sensitive open-source iCloud E-Ink calendar system (code + build docs) in a space without reproducible open-source implementations</span>
+              <span class="accomplishment-major-label">Designed and released a cost-conscious, end-to-end open-source iCloud E-Ink calendar system (code + build documentation) in a niche with limited reproducible public implementations.</span>
             </div>
             <div class="accomplishment-major">
               <span class="accomplishment-major-value">3,000+</span>
-              <span class="accomplishment-major-label">Devices supported; critical fixes deployed in &lt;1 hour and software adopted by U.S. Census Bureau staff</span>
+              <span class="accomplishment-major-label">Devices supported; critical fixes deployed in &lt;1 hour, with software adopted and used in a federal production environment.</span>
             </div>
           </div>
           <p class="metrics-filter-lede">Select a category to view impact statements.</p>
@@ -608,6 +617,68 @@
     ></script>
     <script type="module" src="assets/js/qa.js?v=20260215"></script>
     <script src="assets/js/projects.js?v=20260206" defer></script>
+    <script>
+      // FAQ overlay: progress on Enable AI, then unlock form when loaded
+      (function() {
+        const enableBtn = document.getElementById('qa-enable');
+        const overlay = document.getElementById('qa-form-overlay');
+        const initialEl = document.getElementById('qa-overlay-initial');
+        const loadingEl = document.getElementById('qa-overlay-loading');
+        const progressFill = document.getElementById('qa-progress-fill');
+        const progressTrack = document.getElementById('qa-progress-track');
+        const panel = document.querySelector('.qa-panel');
+        const input = document.getElementById('qa-question');
+        const askBtn = document.getElementById('qa-ask');
+        const statusEl = document.getElementById('qa-status');
+
+        function unlockForm() {
+          panel.classList.add('qa-unlocked');
+          if (input) input.removeAttribute('disabled');
+          if (askBtn) askBtn.removeAttribute('disabled');
+          if (statusEl) statusEl.textContent = 'Enabled.';
+          if (input) input.focus();
+        }
+
+        function startLoading() {
+          if (!initialEl || !loadingEl || !progressFill) return;
+          initialEl.hidden = true;
+          loadingEl.hidden = false;
+          progressFill.style.width = '0%';
+
+          // Fast progress animation (no model to load, just UI feedback)
+          var start = null;
+          var duration = 600;
+
+          function tick(timestamp) {
+            if (!start) start = timestamp;
+            var elapsed = timestamp - start;
+            var pct = Math.min(100, (elapsed / duration) * 100);
+            progressFill.style.width = pct + '%';
+            if (progressTrack) progressTrack.setAttribute('aria-valuenow', Math.round(pct));
+            if (pct < 100) requestAnimationFrame(tick);
+          }
+          requestAnimationFrame(tick);
+        }
+
+        function finishLoading() {
+          if (progressFill) progressFill.style.width = '100%';
+          setTimeout(unlockForm, 180);
+        }
+
+        var loadTimeout;
+        if (enableBtn && overlay) {
+          enableBtn.addEventListener('click', function() {
+            startLoading();
+            loadTimeout = setTimeout(finishLoading, 700);
+          });
+        }
+
+        window.addEventListener('qa-loaded', function() {
+          if (loadTimeout) clearTimeout(loadTimeout);
+          if (loadingEl && !loadingEl.hidden) finishLoading();
+        });
+      })();
+    </script>
     <script>
       // Metrics: impact statement filters (none selected by default)
       (function() {
