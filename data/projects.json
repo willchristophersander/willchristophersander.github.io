@@ -161,6 +161,80 @@
       ]
     },
     {
+      "id": "canvas",
+      "title": "C++ Canvas Raster Graphics Editor",
+      "subtitle": "UVM \u00b7 Advanced Programming",
+      "summary": "Real-time raster editor with layered buffers.",
+      "bullets": [
+        "7 tools + diff-based undo/redo",
+        "Lazy CPU\u2192GPU texture updates"
+      ],
+      "tags": [
+        "c++",
+        "opengl",
+        "graphics",
+        "github"
+      ],
+      "status": "completed",
+      "sourceStatus": "github-available",
+      "tileItems": [
+        {
+          "type": "video",
+          "src": "https://www.youtube.com/embed/DYT15DFBhdc"
+        },
+        {
+          "type": "image",
+          "src": "Projects/Canvas/Screenshot 2026-02-06 at 8.57.05\u202fPM.png"
+        }
+      ],
+      "tileTitles": [
+        "",
+        ""
+      ],
+      "tileAlts": [
+        "",
+        "C++ Canvas raster editor screenshot"
+      ],
+      "modal": {
+        "title": "C++ Canvas Raster Graphics Editor",
+        "subtitle": "UVM \u00b7 Advanced Programming",
+        "body": "Built a real-time raster graphics engine with seven tools, multi-layer RGBA buffers, and diff-based undo/redo. Implemented OpenGL rendering with lazy texture updates and software blending, plus image filters via Python C API + NumPy.",
+        "bullets": [
+          "60 FPS at 800\u00d7600 with lazy CPU\u2192GPU texture updates",
+          "Custom rasterization and per-pixel alpha compositing",
+          "C++, OpenGL, ImGui, Python C API, NumPy"
+        ],
+        "links": [
+          {
+            "label": "Video demo",
+            "href": "https://youtu.be/DYT15DFBhdc"
+          },
+          {
+            "label": "Repository on GitHub",
+            "href": "https://github.com/willchristophersander/Canvas"
+          }
+        ],
+        "sliderItems": [
+          {
+            "type": "video",
+            "src": "https://www.youtube.com/embed/DYT15DFBhdc"
+          },
+          {
+            "type": "image",
+            "src": "Projects/Canvas/Screenshot 2026-02-06 at 8.57.05\u202fPM.png"
+          }
+        ],
+        "sliderTitles": [
+          "",
+          ""
+        ],
+        "sliderAlts": [
+          "",
+          ""
+        ]
+      }
+    },
+    {
       "id": "robotVacuumPlumbing",
       "title": "Robot Vacuum & Plumbing Automation",
       "subtitle": "Personal Project \u00b7 Home Automation",
@@ -231,80 +305,6 @@
         "sliderTitles": [
           "",
           "",
-          "",
-          ""
-        ]
-      }
-    },
-    {
-      "id": "canvas",
-      "title": "C++ Canvas Raster Graphics Editor",
-      "subtitle": "UVM \u00b7 Advanced Programming",
-      "summary": "Real-time raster editor with layered buffers.",
-      "bullets": [
-        "7 tools + diff-based undo/redo",
-        "Lazy CPU\u2192GPU texture updates"
-      ],
-      "tags": [
-        "c++",
-        "opengl",
-        "graphics",
-        "github"
-      ],
-      "status": "completed",
-      "sourceStatus": "github-available",
-      "tileItems": [
-        {
-          "type": "video",
-          "src": "https://www.youtube.com/embed/DYT15DFBhdc"
-        },
-        {
-          "type": "image",
-          "src": "Projects/Canvas/Screenshot 2026-02-06 at 8.57.05\u202fPM.png"
-        }
-      ],
-      "tileTitles": [
-        "",
-        ""
-      ],
-      "tileAlts": [
-        "",
-        "C++ Canvas raster editor screenshot"
-      ],
-      "modal": {
-        "title": "C++ Canvas Raster Graphics Editor",
-        "subtitle": "UVM \u00b7 Advanced Programming",
-        "body": "Built a real-time raster graphics engine with seven tools, multi-layer RGBA buffers, and diff-based undo/redo. Implemented OpenGL rendering with lazy texture updates and software blending, plus image filters via Python C API + NumPy.",
-        "bullets": [
-          "60 FPS at 800\u00d7600 with lazy CPU\u2192GPU texture updates",
-          "Custom rasterization and per-pixel alpha compositing",
-          "C++, OpenGL, ImGui, Python C API, NumPy"
-        ],
-        "links": [
-          {
-            "label": "Video demo",
-            "href": "https://youtu.be/DYT15DFBhdc"
-          },
-          {
-            "label": "Repository on GitHub",
-            "href": "https://github.com/willchristophersander/Canvas"
-          }
-        ],
-        "sliderItems": [
-          {
-            "type": "video",
-            "src": "https://www.youtube.com/embed/DYT15DFBhdc"
-          },
-          {
-            "type": "image",
-            "src": "Projects/Canvas/Screenshot 2026-02-06 at 8.57.05\u202fPM.png"
-          }
-        ],
-        "sliderTitles": [
-          "",
-          ""
-        ],
-        "sliderAlts": [
           "",
           ""
         ]

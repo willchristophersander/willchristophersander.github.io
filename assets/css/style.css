@@ -702,6 +702,18 @@ a {
   margin-top: 1.2rem;
 }
 
+.modal-meta {
+  display: grid;
+  gap: 0.6rem;
+  margin: 0.9rem 0 1rem;
+}
+
+.modal-badges {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+}
+
 .modal-gallery {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
