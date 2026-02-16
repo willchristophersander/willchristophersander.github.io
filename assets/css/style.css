@@ -79,6 +79,36 @@ a {
   font-weight: 600;
 }
 
+.header-search {
+  flex-shrink: 0;
+  margin-left: 0.5rem;
+}
+
+.header-search input {
+  width: 10rem;
+  padding: 0.45rem 0.75rem;
+  font-size: 0.9rem;
+  border: 1px solid var(--border);
+  border-radius: 999px;
+  background: var(--surface);
+  color: var(--text);
+  transition: border-color 0.15s ease, width 0.2s ease;
+}
+
+.header-search input::placeholder {
+  color: var(--muted);
+}
+
+.header-search input:hover {
+  border-color: #ccc;
+}
+
+.header-search input:focus {
+  outline: none;
+  border-color: var(--accent);
+  width: 12rem;
+}
+
 .hero {
   padding: 5.5rem 0 4rem;
 }
@@ -937,183 +967,6 @@ a {
   outline-offset: 2px;
 }
 
-.qa-panel {
-  display: grid;
-  gap: 0.75rem;
-}
-
-.qa-body {
-  display: none;
-}
-
-.qa-panel.qa-open .qa-body {
-  display: block;
-}
-
-.qa-header {
-  display: flex;
-  justify-content: space-between;
-  gap: 1rem;
-  align-items: center;
-  flex-wrap: wrap;
-}
-
-.qa-header h2 {
-  margin: 0;
-  font-size: 1.25rem;
-}
-
-.qa-header-actions {
-  display: flex;
-  align-items: center;
-  gap: 1rem;
-  flex-wrap: wrap;
-}
-
-.qa-what {
-  font-size: 0.875rem;
-}
-
-.qa-what summary {
-  cursor: pointer;
-  color: var(--muted);
-  list-style: none;
-}
-
-.qa-what summary::-webkit-details-marker {
-  display: none;
-}
-
-.qa-what summary:hover {
-  color: var(--accent);
-}
-
-.qa-what[open] summary {
-  margin-bottom: 0.5rem;
-}
-
-.qa-what p {
-  margin: 0;
-  padding: 0.5rem 0 0;
-  color: var(--muted);
-  font-size: 0.8125rem;
-  line-height: 1.5;
-}
-
-.qa-legacy-notice {
-  margin: 0 0 0.5rem 0;
-  padding: 0.5rem 0.75rem;
-  background: rgba(255, 140, 0, 0.1);
-  border-left: 3px solid rgba(255, 140, 0, 0.5);
-  border-radius: 4px;
-  font-size: 0.8125rem;
-  color: var(--text);
-  font-weight: 500;
-}
-
-.qa-status {
-  margin: 0;
-  font-size: 0.8125rem;
-}
-
-.qa-form-wrap {
-  position: relative;
-  min-height: 2.75rem;
-}
-
-.qa-form-overlay {
-  position: absolute;
-  inset: 0;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  background: rgba(255, 255, 255, 0.85);
-  border: 1px dashed var(--border);
-  border-radius: 8px;
-}
-
-.qa-panel.qa-unlocked .qa-form-overlay {
-  pointer-events: none;
-  opacity: 0;
-  visibility: hidden;
-  transition: opacity 0.2s ease, visibility 0.2s ease;
-}
-
-.qa-form-overlay #qa-enable {
-  margin: 0;
-}
-
-.qa-overlay-loading {
-  width: 100%;
-  padding: 0 1.5rem;
-  text-align: center;
-}
-
-.qa-loading-label {
-  margin: 0 0 0.75rem 0;
-  font-size: 0.9rem;
-  color: var(--text);
-  font-weight: 500;
-}
-
-.qa-progress-track {
-  height: 6px;
-  background: var(--border);
-  border-radius: 999px;
-  overflow: hidden;
-}
-
-.qa-progress-fill {
-  height: 100%;
-  width: 0%;
-  background: var(--accent);
-  border-radius: 999px;
-}
-
-.qa-form {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 0.75rem;
-}
-
-.qa-form input {
-  flex: 1 1 320px;
-  padding: 0.65rem 0.9rem;
-  border-radius: 999px;
-  border: 1px solid var(--border);
-  background: #ffffff;
-  font-size: 0.95rem;
-}
-
-.qa-output {
-  min-height: 1.2rem;
-  padding: 0.6rem 0.9rem;
-  border-radius: 12px;
-  background: #f8f8f6;
-  color: var(--text);
-}
-
-.qa-answers-list {
-  margin: 0;
-  padding-left: 1.25rem;
-  list-style: disc;
-}
-
-.qa-answers-list li {
-  margin-bottom: 0.5rem;
-}
-
-.qa-answers-list li:last-child {
-  margin-bottom: 0;
-}
-
-@media (max-width: 720px) {
-  .qa-header {
-    flex-direction: column;
-    align-items: flex-start;
-  }
-}
-
 .tile-header h2,
 .tile-header h3 {
   margin: 0 0 0.2rem;
@@ -1418,6 +1271,19 @@ body.modal-open {
   .site-header .container {
     flex-direction: column;
     align-items: flex-start;
+  }
+
+  .header-search {
+    width: 100%;
+    margin-left: 0;
+  }
+
+  .header-search input {
+    width: 100%;
+  }
+
+  .header-search input:focus {
+    width: 100%;
   }
 
   .hero {
