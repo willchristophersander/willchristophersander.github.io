@@ -1,0 +1,112 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Search | Will Christopher Sander</title>
+    <meta name="description" content="Search this site." />
+    <link rel="stylesheet" href="assets/css/style.css?v=20260206" />
+  </head>
+  <body>
+    <header class="site-header">
+      <div class="container">
+        <a class="logo" href="index.html">Will Christopher Sander</a>
+        <nav class="site-nav" aria-label="Main navigation">
+          <a href="index.html">Home</a>
+          <a href="projects.html">Projects</a>
+          <a href="code-reviews.html">Code Reviews</a>
+          <a href="coursework.html">Coursework</a>
+          <a href="experience.html">Experience</a>
+          <a href="contact.html">Contact</a>
+          <a href="resume.html">Resume</a>
+        </nav>
+        <form class="header-search" role="search" aria-label="Site search" action="search.html" method="get">
+          <input type="search" name="q" placeholder="Search…" autocomplete="off" id="search-input" />
+        </form>
+      </div>
+    </header>
+
+    <main>
+      <section class="page-hero">
+        <div class="container">
+          <h1>Search</h1>
+          <p class="lede">Find pages that mention your search term.</p>
+        </div>
+      </section>
+
+      <section class="section">
+        <div class="container">
+          <form class="search-form-inline" action="search.html" method="get" style="margin-bottom: 1.5rem;">
+            <input type="search" name="q" placeholder="e.g. C++, Python, machine learning" autocomplete="off" id="search-inline" style="max-width: 20rem; padding: 0.5rem 0.75rem; font-size: 1rem; border: 1px solid var(--border); border-radius: 8px;" />
+            <button type="submit" class="button" style="margin-left: 0.5rem;">Search</button>
+          </form>
+          <div id="search-results" aria-live="polite">
+            <p class="muted-text" id="search-status">Loading…</p>
+            <ul class="search-results-list" id="results-list" hidden></ul>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <footer class="site-footer">
+      <div class="container">
+        <span>© 2026 Will Christopher Sander</span>
+        <span>Built for clarity and focus.</span>
+      </div>
+    </footer>
+    <script>
+      (function() {
+        const params = new URLSearchParams(window.location.search);
+        const q = (params.get('q') || '').trim();
+        const searchInput = document.getElementById('search-input');
+        const searchInline = document.getElementById('search-inline');
+        const statusEl = document.getElementById('search-status');
+        const listEl = document.getElementById('results-list');
+
+        if (searchInput) searchInput.value = q;
+        if (searchInline) searchInline.value = q;
+
+        function renderResults(query, index) {
+          if (!query) {
+            statusEl.textContent = 'Enter a search term above.';
+            listEl.hidden = true;
+            return;
+          }
+          const lower = query.toLowerCase();
+          const matches = index.filter(function (page) {
+            return page.text.toLowerCase().indexOf(lower) !== -1;
+          });
+          if (matches.length === 0) {
+            statusEl.textContent = 'No pages found for “‘ + escapeHtml(query) + '”.';
+            listEl.hidden = true;
+            return;
+          }
+          statusEl.textContent = matches.length + ' page' + (matches.length === 1 ? '' : 's') + ' found.';
+          listEl.hidden = false;
+          listEl.innerHTML = matches.map(function (page) {
+            return '<li><a href="' + escapeAttr(page.url) + '">' + escapeHtml(page.title) + '</a></li>';
+          }).join('');
+        }
+
+        function escapeHtml(s) {
+          const div = document.createElement('div');
+          div.textContent = s;
+          return div.innerHTML;
+        }
+        function escapeAttr(s) {
+          return s.replace(/&/g, '&amp;').replace(/"/g, '&quot;').replace(/</g, '&lt;').replace(/>/g, '&gt;');
+        }
+
+        fetch('assets/search-index.json')
+          .then(function (r) { return r.json(); })
+          .then(function (index) {
+            renderResults(q, index);
+          })
+          .catch(function () {
+            statusEl.textContent = 'Search index could not be loaded.';
+            listEl.hidden = true;
+          });
+      })();
+    </script>
+  </body>
+</html>
