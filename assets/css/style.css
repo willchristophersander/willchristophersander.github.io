@@ -58,6 +58,11 @@ a {
   gap: 2rem;
 }
 
+/* Keep section targets visible below sticky header when scrolling to hash */
+main [id] {
+  scroll-margin-top: 6rem;
+}
+
 .logo {
   font-weight: 600;
   letter-spacing: -0.02em;

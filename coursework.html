@@ -43,7 +43,7 @@
       <section class="section">
         <div class="container">
           <div class="section-head">
-            <h2>Coursework by focus</h2>
+            <h2 id="coursework-by-focus">Coursework by focus</h2>
             <p class="lede">
               Click a course to open the syllabus and details.
             </p>
@@ -920,6 +920,7 @@
         <span>Coursework that supports my work.</span>
       </div>
     </footer>
+    <script src="assets/js/hash-scroll.js" defer></script>
     <script>
       const openCourseModal = (id) => {
         const modal = document.getElementById(`course-${id}`);
@@ -927,6 +928,10 @@
         modal.classList.add("is-open");
         modal.setAttribute("aria-hidden", "false");
         document.body.classList.add("modal-open");
+        const hash = "course-" + id;
+        if (location.hash !== "#" + hash) {
+          location.hash = hash;
+        }
       };
 
       const closeCourseModal = (modal) => {
@@ -934,6 +939,28 @@
         modal.classList.remove("is-open");
         modal.setAttribute("aria-hidden", "true");
         document.body.classList.remove("modal-open");
+      };
+
+      const closeCourseModalAndBack = () => {
+        const openModalEl = document.querySelector(".modal.is-open");
+        if (openModalEl) {
+          closeCourseModal(openModalEl);
+          history.back();
+        }
+      };
+
+      const openCourseModalFromHash = () => {
+        const hash = location.hash.slice(1);
+        if (hash.startsWith("course-")) {
+          const id = hash.slice(7);
+          const modal = document.getElementById("course-" + id);
+          if (modal) openCourseModal(id);
+        }
+      };
+
+      const closeCourseModalFromPopstate = () => {
+        const openModalEl = document.querySelector(".modal.is-open");
+        if (openModalEl) closeCourseModal(openModalEl);
       };
 
       document.addEventListener("click", (event) => {
@@ -945,27 +972,37 @@
       });
 
       document.querySelectorAll("[data-course-close]").forEach((button) => {
-        button.addEventListener("click", () => {
-          const modal = button.closest(".modal");
-          closeCourseModal(modal);
+        button.addEventListener("click", (e) => {
+          e.preventDefault();
+          closeCourseModalAndBack();
         });
       });
 
       document.querySelectorAll(".modal").forEach((modal) => {
         modal.addEventListener("click", (event) => {
           if (event.target.classList.contains("modal-backdrop")) {
-            closeCourseModal(modal);
+            closeCourseModalAndBack();
           }
         });
       });
 
       document.addEventListener("keydown", (event) => {
         if (event.key !== "Escape") return;
-        const openModalEl = document.querySelector(".modal.is-open");
-        if (openModalEl) {
-          closeCourseModal(openModalEl);
+        closeCourseModalAndBack();
+      });
+
+      window.addEventListener("hashchange", () => {
+        const hash = location.hash.slice(1);
+        if (hash.startsWith("course-") && document.getElementById("course-" + hash.slice(7))) {
+          openCourseModalFromHash();
+        } else {
+          closeCourseModalFromPopstate();
         }
       });
+
+      window.addEventListener("popstate", closeCourseModalFromPopstate);
+
+      openCourseModalFromHash();
 
       const courseSearch = document.getElementById("course-search");
       const courseFilters = document.querySelectorAll(".filter-chip[data-tag]");

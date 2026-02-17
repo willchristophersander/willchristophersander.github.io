@@ -37,12 +37,11 @@
       <section class="section">
         <div class="container">
           <form class="search-form-inline" action="search.html" method="get" style="margin-bottom: 1.5rem;">
-            <input type="search" name="q" placeholder="e.g. C++, Python, machine learning" autocomplete="off" id="search-inline" style="max-width: 20rem; padding: 0.5rem 0.75rem; font-size: 1rem; border: 1px solid var(--border); border-radius: 8px;" />
+            <input type="search" name="q" placeholder="e.g. C++, Python, William" autocomplete="off" id="search-inline" style="max-width: 20rem; padding: 0.5rem 0.75rem; font-size: 1rem; border: 1px solid var(--border); border-radius: 8px;" />
             <button type="submit" class="button" style="margin-left: 0.5rem;">Search</button>
           </form>
-          <div id="search-results" aria-live="polite">
-            <p class="muted-text" id="search-status">Loading…</p>
-            <ul class="search-results-list" id="results-list" hidden></ul>
+          <div id="search-results" class="muted-text" aria-live="polite">
+            Loading…
           </div>
         </div>
       </section>
@@ -54,58 +53,94 @@
         <span>Built for clarity and focus.</span>
       </div>
     </footer>
+
+    <script src="assets/js/hash-scroll.js" defer></script>
     <script>
-      (function() {
-        const params = new URLSearchParams(window.location.search);
-        const q = (params.get('q') || '').trim();
-        const searchInput = document.getElementById('search-input');
-        const searchInline = document.getElementById('search-inline');
-        const statusEl = document.getElementById('search-status');
-        const listEl = document.getElementById('results-list');
+      (function () {
+        var resultsEl = document.getElementById("search-results");
+        if (!resultsEl) return;
 
-        if (searchInput) searchInput.value = q;
-        if (searchInline) searchInline.value = q;
-
-        function renderResults(query, index) {
-          if (!query) {
-            statusEl.textContent = 'Enter a search term above.';
-            listEl.hidden = true;
-            return;
-          }
-          const lower = query.toLowerCase();
-          const matches = index.filter(function (page) {
-            return page.text.toLowerCase().indexOf(lower) !== -1;
-          });
-          if (matches.length === 0) {
-            statusEl.textContent = 'No pages found for “‘ + escapeHtml(query) + '”.';
-            listEl.hidden = true;
-            return;
-          }
-          statusEl.textContent = matches.length + ' page' + (matches.length === 1 ? '' : 's') + ' found.';
-          listEl.hidden = false;
-          listEl.innerHTML = matches.map(function (page) {
-            return '<li><a href="' + escapeAttr(page.url) + '">' + escapeHtml(page.title) + '</a></li>';
-          }).join('');
+        var params = new URLSearchParams(window.location.search);
+        var q = params.get("q");
+        if (q !== null) q = q.trim();
+        if (!q) {
+          resultsEl.textContent = "Enter a search term above and press Search.";
+          var inp = document.getElementById("search-input");
+          var inl = document.getElementById("search-inline");
+          if (inp) inp.value = "";
+          if (inl) inl.value = "";
+          return;
         }
 
-        function escapeHtml(s) {
-          const div = document.createElement('div');
-          div.textContent = s;
+        var inp = document.getElementById("search-input");
+        var inl = document.getElementById("search-inline");
+        if (inp) inp.value = q;
+        if (inl) inl.value = q;
+
+        resultsEl.textContent = "Searching…";
+
+        var indexUrl = "assets/search-index.json";
+        fetch(indexUrl)
+          .then(function (res) {
+            if (!res.ok) throw new Error("Not found");
+            return res.json();
+          })
+          .then(function (index) {
+            if (!Array.isArray(index)) throw new Error("Invalid index");
+            var lower = q.toLowerCase();
+            var matches = [];
+            for (var i = 0; i < index.length; i++) {
+              var page = index[i];
+              var text = page && page.text;
+              if (text && String(text).toLowerCase().indexOf(lower) !== -1) {
+                matches.push(page);
+              }
+            }
+            matches = dedupeBySubtitle(matches);
+            if (matches.length === 0) {
+              resultsEl.innerHTML = "<p>No pages found for \"" + escapeHtml(q) + "\".</p>";
+              return;
+            }
+            var html = "<p>" + matches.length + " result" + (matches.length === 1 ? "" : "s") + " found.</p><ul class=\"search-results-list\">";
+            for (var j = 0; j < matches.length; j++) {
+              var p = matches[j];
+              var label = p.subtitle ? escapeHtml(p.title) + " \u2192 " + escapeHtml(p.subtitle) : escapeHtml(p.title);
+              html += "<li><a href=\"" + escapeAttr(p.url) + "\">" + label + "</a></li>";
+            }
+            html += "</ul>";
+            resultsEl.innerHTML = html;
+            resultsEl.className = "muted-text";
+          })
+          .catch(function (err) {
+            resultsEl.textContent = "Could not load search index. Run \"npm run build-search\" and ensure assets/search-index.json exists.";
+          });
+
+        function dedupeBySubtitle(list) {
+          var keyToBest = {};
+          for (var i = 0; i < list.length; i++) {
+            var p = list[i];
+            var key = (p.title || "") + "\n" + (p.subtitle || "");
+            var existing = keyToBest[key];
+            if (!existing || (p.url.indexOf("#") !== -1 && existing.url.indexOf("#") === -1)) {
+              keyToBest[key] = p;
+            }
+          }
+          return Object.keys(keyToBest).map(function (k) { return keyToBest[k]; });
+        }
+        function escapeHtml(str) {
+          if (str == null) return "";
+          var div = document.createElement("div");
+          div.textContent = str;
           return div.innerHTML;
         }
-        function escapeAttr(s) {
-          return s.replace(/&/g, '&amp;').replace(/"/g, '&quot;').replace(/</g, '&lt;').replace(/>/g, '&gt;');
+        function escapeAttr(str) {
+          if (str == null) return "";
+          return String(str)
+            .replace(/&/g, "&amp;")
+            .replace(/"/g, "&quot;")
+            .replace(/</g, "&lt;")
+            .replace(/>/g, "&gt;");
         }
-
-        fetch('assets/search-index.json')
-          .then(function (r) { return r.json(); })
-          .then(function (index) {
-            renderResults(q, index);
-          })
-          .catch(function () {
-            statusEl.textContent = 'Search index could not be loaded.';
-            listEl.hidden = true;
-          });
       })();
     </script>
   </body>

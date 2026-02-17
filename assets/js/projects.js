@@ -9,7 +9,9 @@ const openModal = (id) => {
   modal.classList.add("is-open");
   modal.setAttribute("aria-hidden", "false");
   document.body.classList.add("modal-open");
-  modal.querySelectorAll("[data-slider]").forEach((slider) => initSlider(slider));
+  if (location.hash !== "#" + id) {
+    location.hash = id;
+  }
 };
 
 const closeModal = (modal) => {
@@ -17,6 +19,31 @@ const closeModal = (modal) => {
   modal.classList.remove("is-open");
   modal.setAttribute("aria-hidden", "true");
   document.body.classList.remove("modal-open");
+};
+
+const closeModalAndBack = () => {
+  const openModalEl = document.querySelector(".modal.is-open");
+  if (openModalEl) {
+    closeModal(openModalEl);
+    history.back();
+  }
+};
+
+const openModalFromHash = () => {
+  const rawHash = location.hash;
+  if (!rawHash || rawHash.length < 2) return;
+  const id = decodeURIComponent(rawHash.slice(1));
+  const modal = document.getElementById(id);
+  if (modal && modal.classList.contains("modal")) {
+    openModal(id);
+  }
+};
+
+const closeModalFromPopstate = () => {
+  const openModalEl = document.querySelector(".modal.is-open");
+  if (openModalEl) {
+    closeModal(openModalEl);
+  }
 };
 
 openButtons.forEach((button) => {
@@ -27,27 +54,45 @@ openButtons.forEach((button) => {
 });
 
 closeButtons.forEach((button) => {
-  button.addEventListener("click", () => {
-    const modal = button.closest(".modal");
-    closeModal(modal);
+  button.addEventListener("click", (e) => {
+    e.preventDefault();
+    closeModalAndBack();
   });
 });
 
 modals.forEach((modal) => {
   modal.addEventListener("click", (event) => {
     if (event.target.classList.contains("modal-backdrop")) {
-      closeModal(modal);
+      closeModalAndBack();
     }
   });
 });
 
 document.addEventListener("keydown", (event) => {
   if (event.key !== "Escape") return;
-  const openModalEl = document.querySelector(".modal.is-open");
-  if (openModalEl) {
-    closeModal(openModalEl);
+  closeModalAndBack();
+});
+
+window.addEventListener("hashchange", () => {
+  if (location.hash) {
+    openModalFromHash();
+  } else {
+    closeModalFromPopstate();
   }
 });
+
+window.addEventListener("popstate", closeModalFromPopstate);
+
+function tryOpenModalFromHash() {
+  openModalFromHash();
+}
+
+tryOpenModalFromHash();
+if (document.readyState === "loading") {
+  document.addEventListener("DOMContentLoaded", tryOpenModalFromHash);
+}
+window.addEventListener("load", tryOpenModalFromHash);
+requestAnimationFrame(tryOpenModalFromHash);
 
 sliders.forEach((slider) => {
   const slides = Array.from(slider.querySelectorAll(".tile-slide"));
