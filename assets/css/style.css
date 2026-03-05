@@ -529,12 +529,16 @@ main [id] {
 }
 
 .tile-grid--projects {
-  grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
-  gap: 1.2rem;
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  gap: 1.5rem;
 }
 
 .tile-grid--projects .tile-media {
-  height: 100px;
+  height: 220px;
+}
+
+.tile-grid--projects .tile-tags {
+  display: none;
 }
 
 .tile-grid--projects .tile-card {
@@ -542,13 +546,13 @@ main [id] {
 }
 
 .tile-grid--projects .tile-body {
-  padding: 0.65rem 0.85rem 0.85rem;
-  gap: 0.3rem;
+  padding: 1rem 1.1rem 1.1rem;
+  gap: 0.5rem;
 }
 
 .tile-grid--projects .tile-header h2 {
-  font-size: 1rem;
-  margin-bottom: 0.1rem;
+  font-size: 1.05rem;
+  margin-bottom: 0.2rem;
 }
 
 .tile-grid--projects .muted-text {
@@ -556,14 +560,14 @@ main [id] {
 }
 
 .tile-grid--projects .tile-summary {
-  font-size: 0.85rem;
+  font-size: 0.875rem;
   min-height: 0;
-  line-height: 1.4;
+  line-height: 1.5;
 }
 
 .tile-grid--projects .tile-action {
   font-size: 0.9rem;
-  margin-top: 0.4rem;
+  margin-top: 0.6rem;
 }
 
 @media (min-width: 1200px) {
